@@ -1,6 +1,6 @@
-const ticTacToe = document.querySelectorAll('.ticTactToe');
+const ticTacToe = document.querySelector('.ticTactToe');
 const player = document.querySelector('.player');
-const theSquares = document.querySelectorAll('.theSquares');
+const theSquares = document.querySelector('.theSquares');
 const square = document.querySelectorAll('.square');
 
 //click on start game show player one
