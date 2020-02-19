@@ -22,7 +22,8 @@ if (player.textContent === 'PLAYER ONE'){
             alert('PLAYER ONE\'S TURN');
             player.textContent = 'PLAYER ONE';
         });
-}
+    };
+};
     
 //for the squares if player 1 click textedit X if player 2 textedit O. if three squares match put a dash through them. will probably have to make three arrays signifying how the squares have to line up based on their number.
 
