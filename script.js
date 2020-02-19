@@ -14,15 +14,15 @@ if (player.textContent === 'PLAYER ONE'){
             alert('PLAYER TWO\'S TURN');
             player.textContent = 'PLAYER TWO';
         });
-}else{
+    } 
+} else {
     for (let i = 0; i < square; index++) {
         square[i].addEventListener = ('click', () => {
-            square.textContent = 'X';
-            alert('PLAYER TWO\'S TURN');
-            player.textContent = 'PLAYER TWO';
-        });
-    };
-
+            square.textContent = 'O';
+            alert('PLAYER ONE\'S TURN');
+            player.textContent = 'PLAYER ONE';
+};
+    
 //for the squares if player 1 click textedit X if player 2 textedit O. if three squares match put a dash through them. will probably have to make three arrays signifying how the squares have to line up based on their number.
 
-// base on which player got the winning array display that that player
+//base on which player got the winning array display that that 
