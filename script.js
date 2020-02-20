@@ -8,17 +8,21 @@ const player1Score = [];
 const player2Score =[];
 
 //click on start game show player one
-player.addEventListener("click",() => { player.textContext = 'PLAYER ONE'});
+player.addEventListener('click', () => { player.textContent = 'PLAYER ONE'});
+// player.addEventListener('click', function(){
+//     console.log(player.textContent);
+//     player.textContent = 'weef;aksjdf;alskdjf';
+// });
 
 for (let i = 0; i < square; index++) {
     square[i].addEventListener('click',() => {
         if (player.textContent === 'PLAYER ONE'){
-            square[i].textContext = 'X';
+            square[i].textContent = 'X';
             alert('PLAYER TWO\'S TURN');
             player.textContent = 'PLAYER TWO';
         } else {
             for (let i = 0; i < square; index++) {
-                square[i].textContext = 'O';
+                square[i].textContent = 'O';
                 alert('PLAYER ONE\'S TURN');
                 player.textContent = 'PLAYER ONE';
             };
