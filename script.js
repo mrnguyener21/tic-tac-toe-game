@@ -20,16 +20,17 @@ const reset = () =>{
 player.addEventListener('click', () => { player.textContent = 'PLAYER ONE' });
 
 for (let i = 0; i < square; i++) {
-    const numberingTheSquares = [];
-    return 
-    
-}
+    //i need to find a way to multiply the squares by the const numberOfSquares
+    square[i](numberOfSquares);
+    console.log('does this work');
+};
 
 for (let i = 0; i < square.length; i++) {
     console.log(square[i]);
     square[i].addEventListener('click',() => {
         if (player.textContent === 'PLAYER ONE'){
             square[i].textContent = 'X';
+            console.log(square[i]);
             //alert('PLAYER TWO\'S TURN');
             player.textContent = 'PLAYER TWO';
         } else if (player.textContent === 'PLAYER TWO'){
