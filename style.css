@@ -5,10 +5,10 @@
 
 }
 
-.player{
-    display: flex;
-    justify-content: center;
-    align-content: center;
+#theButton{
+   display: flex;
+   align-items: center;
+   justify-content: center;
 }
 
 .theSquares{
@@ -52,7 +52,7 @@
     */
 
     /*the design code i liked better, compare and learn*/
-    border: 6px solid #2c3e50; /*he repeated this so this border and the border in .theSquares can blend in
+    border: 6px solid #2c3e50; /*he repeated this so this border and the border in .theSquares can blend in*/
     border-radius: 2px;
     font-family: Helvetica;
     font-weight: bold;
