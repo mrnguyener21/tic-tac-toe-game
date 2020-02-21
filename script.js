@@ -19,10 +19,12 @@ const reset = () =>{
 //click on start game show player one
 player.addEventListener('click', () => { player.textContent = 'PLAYER ONE' });
 
-for (let i = 0; i < square; i++) {
+for (let i = 0; i < square.length; i++) {
     //i need to find a way to multiply the squares by the const numberOfSquares
-    square[i](numberOfSquares);
+    const numberingTheSquares = Math.floor(Math.random()*square[i]);
     console.log('does this work');
+    console.log(square[i]);
+    return numberingTheSquare;
 };
 
 for (let i = 0; i < square.length; i++) {
@@ -41,7 +43,9 @@ for (let i = 0; i < square.length; i++) {
     });
 };
 
-// need to determine who the winner is. create a for loop to push the clicked square into the respective playerscore.
+// need to determine who the winner is. 
+    //create a for loop to push the clicked square into the respective playerscore.
+
 
 
 
