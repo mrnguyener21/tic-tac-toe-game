@@ -26,6 +26,8 @@ for (let i = 0; i < square.length; i++) {
     square[i].addEventListener('click',() => {
         if (player.textContent === 'PLAYER ONE'){
             square[i].textContent = 'X';
+            player1Score.push(square[i]);
+            console.log(player1Score);
             //alert('PLAYER TWO\'S TURN');
             player.textContent = 'PLAYER TWO';
         } else if (player.textContent === 'PLAYER TWO'){
@@ -50,9 +52,10 @@ the index positions for winning combinations
 0,4,8
 2,4,6
 */
+//pretty sure i can do a loop for this just gotta fix the player1 and player 2 variables 
 switch(player1Score){
     case [numberedSquares[0],numberedSquares[1],numberedSquares[2]]:
-
+        console.log('it works');
     break;
     case [numberedSquares[3],numberedSquares[4],numberedSquares[5]]:
 
