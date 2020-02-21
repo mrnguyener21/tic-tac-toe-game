@@ -4,6 +4,7 @@ const theSquares = document.querySelector('.theSquares');
 const square = document.querySelectorAll('.square');
 
 const numberOfSquares = 9;
+const numberedSquares =[];
 let player1Score = [];
 let player2Score =[];
 // possible winning arrays;
@@ -19,13 +20,8 @@ const reset = () =>{
 //click on start game show player one
 player.addEventListener('click', () => { player.textContent = 'PLAYER ONE' });
 
-for (let i = 0; i < square.length; i++) {
-    //i need to find a way to multiply the squares by the const numberOfSquares
-    const numberingTheSquares = Math.floor(Math.random()*square[i]);
-    console.log('does this work');
-    console.log(square[i]);
-    return numberingTheSquare;
-};
+for (let i = 0; i < square.length; i++) {numberedSquares.push(square[i]);};
+
 
 for (let i = 0; i < square.length; i++) {
     console.log(square[i]);
