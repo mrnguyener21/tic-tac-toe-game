@@ -12,8 +12,12 @@ let player2Score = [];// i have to be able to match what is inside here to numbe
 
 for (let i = 0; i < squares.length; i++) {
     numberedSquares.push(squares[i]);
+    //maybe i need to figure out a while to take what is pushed into the score arrays and match it here since each square div is looped through here
+    if ( player.textContent === 'PLAYER ONE'){
+        squares.addEventListener('click',() => player1Score = numberedSquares);
+        console.log('is this working');//this is not working
+    };
 };
-
 
 const reset = () => {
     player.textContent = 'PLAY AGAIN?';
@@ -32,7 +36,7 @@ for (let i = 0; i < squares.length; i++) {
         if (player.textContent === 'PLAYER ONE'){
             squares[i].textContent = 'X';
             player1Score.push(squares[i]);
-            console.log(player1Score);
+      
             player.textContent = 'PLAYER TWO';
         } else if (player.textContent === 'PLAYER TWO'){
             player.textContent = 'PLAYER ONE'
@@ -40,20 +44,20 @@ for (let i = 0; i < squares.length; i++) {
         };
     });
 };
-console.log(numberedSquares);
-//creating a function that signals the winner
-//possibly need to create a for loop to loop through numberedSquares in order to have the scores see if they match to any of the combinations
-    //possibilities: player 1 wins, player 2 draws, draw
-    //if player 1 = winningCombinations[i] then player 1 wins
-    if(player1Score === numberedSquares[i]){
-        //pop up text content  = PLAYER 1 WINS
-        //when i click in the PLAY AGAIN BUTTON = reset();
-    } else if (player2Score === numberedSquares[i]){   //else if player 2 = winningCombination[i] then player 2 wins
-           //pop up text content  = PLAYER 2 WINS
-        //when i click in the PLAY AGAIN BUTTON = reset();
-    } 
-    //if all the squares have text in them then that's a draw. 
-    //figure out a function to end the game if any of the above three statements are executed
-    //create a function for a pop up screen to appear
+
+// //creating a function that signals the winner
+// //possibly need to create a for loop to loop through numberedSquares in order to have the scores see if they match to any of the combinations
+//     //possibilities: player 1 wins, player 2 draws, draw
+//     //if player 1 = winningCombinations[i] then player 1 wins
+//     if(player1Score === numberedSquares[i]){
+//         //pop up text content  = PLAYER 1 WINS
+//         //when i click in the PLAY AGAIN BUTTON = reset();
+//     } else if (player2Score === numberedSquares[i]){   //else if player 2 = winningCombination[i] then player 2 wins
+//            //pop up text content  = PLAYER 2 WINS
+//         //when i click in the PLAY AGAIN BUTTON = reset();
+//     } 
+//     //if all the squares have text in them then that's a draw. 
+//     //figure out a function to end the game if any of the above three statements are executed
+//     //create a function for a pop up screen to appear
 
 
