@@ -12,10 +12,11 @@ let player2Score = [];// i have to be able to match what is inside here to numbe
 
 for (let i = 0; i < squares.length; i++) {
     numberedSquares.push(squares[i]);
+    console.log('hi');
     //maybe i need to figure out a while to take what is pushed into the score arrays and match it here since each square div is looped through here
+    //maybe what i need to push isn't square[i], but numberedSquare[];
     if ( player.textContent === 'PLAYER ONE'){
-        squares.addEventListener('click',() => player1Score = numberedSquares);
-        console.log('is this working');//this is not working
+        squares.addEventListener('click',() => console.log('this works'));
     };
 };
 
