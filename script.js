@@ -10,16 +10,13 @@ const winningCombination = [[numberedSquares[0],numberedSquares[1],numberedSquar
 let player1Score = [];// i have to be able to match what is inside here to numberedSquares' indexes. right now displays [div.square], needs to display [numberedSquares[1]] as an example
 let player2Score = [];// i have to be able to match what is inside here to numberedSquares' indexes
 
-for (let i = 0; i < squares.length; i++) {
+for (let i = 0; i < squares.length; i++){
     numberedSquares.push(squares[i]);
-    console.log('hi');
-    //maybe i need to figure out a while to take what is pushed into the score arrays and match it here since each square div is looped through here
-    //maybe what i need to push isn't square[i], but numberedSquare[];
-    if ( player.textContent === 'PLAYER ONE'){
-        squares.addEventListener('click',() => console.log('this works'));
-    };
-};
-
+} 
+//maybe i need to make a for loop to cycle through the numbered squares and from there i make it to push it to the player score whenever i click
+for (let i = 0; i< numberedSquares.length; i++) {
+  console.log(numberedSquares[i]);
+    }
 const reset = () => {
     player.textContent = 'PLAY AGAIN?';
     player.addEventListener('click', () => {
