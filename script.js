@@ -48,8 +48,8 @@ for (let i = 0; i < squares.length; i++) {
             squares[i].textContent = 'X';
             player1Score.push(numberedSquares.indexOf(squares[i]));// ex result player1Score=[1,2,3] IT SENDS THE NUMBER I CAN MATCH BY NUMBER
             console.log(player1Score);
-            if(winningCombination[i].some( () => [player1Score] )){
-                console.log('this if else statement works');
+            if(player1Score.some( () => [winningCombination[i]] )){
+                console.log('it loops');
             };
       
             player.textContent = 'PLAYER TWO';
