@@ -55,6 +55,10 @@ for (let i = 0; i < squares.length; i++) {
 //         //when i click in the PLAY AGAIN BUTTON = reset();
 //     } 
 //     //if all the squares have text in them then that's a draw. 
+        //if (player.textContent = 'X || player.textContent = 'O'){
+            //pop up text content = DRAW
+            //when I click in the PLAY AGAIN BUTTON = reset()'
+        //}
 //     //figure out a function to end the game if any of the above three statements are executed
 //     //create a function for a pop up screen to appear
 
