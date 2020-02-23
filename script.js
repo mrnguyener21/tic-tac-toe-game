@@ -14,7 +14,9 @@ for (let i = 0; i < squares.length; i++){
     numberedSquares.push(squares[i]);
 } 
 //maybe i need to make a for loop to cycle through the numbered squares and from there i make it to push it to the player score whenever i click
+//mentor said maybe using indexOf. If i use indexOf I have to find a way that when i push the 'square value' to the score array, I have to then convert it with indexOf so it can push the index instead of the element
 for (let i = 0; i< numberedSquares.length; i++) {
+    squares.addEventListener('click',() => console.log('click works'))
   console.log(numberedSquares[i]);
     }
 const reset = () => {
