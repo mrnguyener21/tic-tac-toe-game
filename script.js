@@ -15,20 +15,20 @@ for (let i = 0; i < squares.length; i++){
 } 
     
 //create a function to check everytime we click
-const checkWinner = () => {
-    squares.addEventListener('click', () => {
-        // for (let i = 0; i < winningCombination.length; i++) {
-        //     if(player1Score.some( () => [...winningCombination[i]] )){
-        //         console.log('this if else statement works');
-        //     };
-        //     console.log("hello");
-        //     console.log(winningCombination[i]);
-        //     console.log(i);
-        // };
-        console.log('square click works');
-    }
-)};
-checkWinner();
+// const checkWinner = () => {
+//     squares.addEventListener('click', () => {
+//         // for (let i = 0; i < winningCombination.length; i++) {
+//         //     if(player1Score.some( () => [...winningCombination[i]] )){
+//         //         console.log('this if else statement works');
+//         //     };
+//         //     console.log("hello");
+//         //     console.log(winningCombination[i]);
+//         //     console.log(i);
+//         // };
+//         console.log('square click works');
+//     }
+// )};
+// checkWinner();
 
 const reset = () => {
     player.textContent = 'PLAY AGAIN?';
@@ -47,6 +47,7 @@ for (let i = 0; i < squares.length; i++) {
         if (player.textContent === 'PLAYER ONE'){
             squares[i].textContent = 'X';
             player1Score.push(numberedSquares.indexOf(squares[i]));// ex result player1Score=[1,2,3] IT SENDS THE NUMBER I CAN MATCH BY NUMBER
+            console.log(winningCombination[i]);
             console.log(player1Score);
       
             player.textContent = 'PLAYER TWO';
@@ -54,6 +55,9 @@ for (let i = 0; i < squares.length; i++) {
             player.textContent = 'PLAYER ONE'
             squares[i].textContent = 'O'; 
         };
+        if(player1Score.some( () => [...winningCombination[i]] )){
+            console.log('this if else statement works');
+        }
     });
 };
 
