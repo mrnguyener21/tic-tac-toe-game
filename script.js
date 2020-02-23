@@ -49,6 +49,17 @@ for (let i = 0; i < squares.length; i++) {
 
 //CREATING THE FUNCTION TO COMPARE THE PLAYERS SCORE TO THE WINNING COMBINATION
 //the player scores will most like reflect [1,4,2,6,3]. here it contains the number [1,2,3] and that is one of the combinations that can win however i have to find a way to where it can still match the winning arrays dispite the order in the players array
+//probably create a for loop to loop through the winning arrays. from there match what is contained wthin the players score array to winningCombinations[i], but use a spread operator? that way we can look at each individual elements of the array to see if they contain any of it
+for (let i = 0; i < winningCombination.length; i++) {
+    if(player1Score.some(...winningCombination[i])){
+        console.log('this if else statement works');
+    }
+    
+};
+
+
+
+
 
 // //creating a function that signals the winner
 // //possibly need to create a for loop to loop through numberedSquares in order to have the scores see if they match to any of the combinations
