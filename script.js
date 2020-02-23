@@ -15,10 +15,10 @@ for (let i = 0; i < squares.length; i++){
 } 
 //maybe i need to make a for loop to cycle through the numbered squares and from there i make it to push it to the player score whenever i click
 //mentor said maybe using indexOf. If i use indexOf I have to find a way that when i push the 'square value' to the score array, I have to then convert it with indexOf so it can push the index instead of the element
-for (let i = 0; i< numberedSquares.length; i++) {
-    squares.addEventListener('click',() => console.log('click works'))
-  console.log(numberedSquares[i]);
-    }
+// for (let i = 0; i< numberedSquares.length; i++) {
+//     squares.addEventListener('click',() => console.log('click works'))
+//   console.log(numberedSquares[i]);
+//     }
 const reset = () => {
     player.textContent = 'PLAY AGAIN?';
     player.addEventListener('click', () => {
@@ -35,7 +35,8 @@ for (let i = 0; i < squares.length; i++) {
     squares[i].addEventListener('click',() => {
         if (player.textContent === 'PLAYER ONE'){
             squares[i].textContent = 'X';
-            player1Score.push(squares[i]);
+            player1Score.push(numberedSquares.indexOf(squares[i]));// ex result player1Score=[1,2,3] IT SENDS THE NUMBER I CAN MATCH BY NUMBER
+            console.log(player1Score);
       
             player.textContent = 'PLAYER TWO';
         } else if (player.textContent === 'PLAYER TWO'){
