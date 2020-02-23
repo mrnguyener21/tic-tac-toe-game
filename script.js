@@ -57,7 +57,7 @@ for (let i = 0; i < squares.length; i++) {
                 
             // }
             if(winningCombination[i].every( () => player1Score )){
-                console.log(winningCombination[i]);
+                console.log('works');
                 // console.log('it loops');
             };// why is it running everytime
 
