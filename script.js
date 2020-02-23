@@ -43,14 +43,21 @@ player.addEventListener('click', () => player.textContent = 'PLAYER ONE');
 //figure out a way to prevent the player from overwriting a square that already has text in it
 
 for (let i = 0; i < squares.length; i++) {
+
     squares[i].addEventListener('click',() => {
         if (player.textContent === 'PLAYER ONE'){
             squares[i].textContent = 'X';
             player1Score.push(numberedSquares.indexOf(squares[i]));// ex result player1Score=[1,2,3] IT SENDS THE NUMBER I CAN MATCH BY NUMBER
-            console.log(player1Score);
-            if(player1Score.some( () => [winningCombination[i]] )){
-                console.log('it loops');
-            };
+
+            for (let i = 0; i < winningCombination.length; i++) {
+                if(player1Score.some( () => [winningCombination[i]] ), player1Score[i] ){
+                    console.log(winningCombination[i]);
+                    // console.log('it loops');
+                };// why is it running everytime
+                
+            }
+            
+
       
             player.textContent = 'PLAYER TWO';
         } else if (player.textContent === 'PLAYER TWO'){
