@@ -13,12 +13,23 @@ let player2Score = [];// i have to be able to match what is inside here to numbe
 for (let i = 0; i < squares.length; i++){
     numberedSquares.push(squares[i]);
 } 
-//maybe i need to make a for loop to cycle through the numbered squares and from there i make it to push it to the player score whenever i click
-//mentor said maybe using indexOf. If i use indexOf I have to find a way that when i push the 'square value' to the score array, I have to then convert it with indexOf so it can push the index instead of the element
-// for (let i = 0; i< numberedSquares.length; i++) {
-//     squares.addEventListener('click',() => console.log('click works'))
-//   console.log(numberedSquares[i]);
-//     }
+    
+//create a function to check everytime we click
+const checkWinner = () => {
+    squares.addEventListener('click', () => {
+        // for (let i = 0; i < winningCombination.length; i++) {
+        //     if(player1Score.some( () => [...winningCombination[i]] )){
+        //         console.log('this if else statement works');
+        //     };
+        //     console.log("hello");
+        //     console.log(winningCombination[i]);
+        //     console.log(i);
+        // };
+        console.log('square click works');
+    }
+)};
+checkWinner();
+
 const reset = () => {
     player.textContent = 'PLAY AGAIN?';
     player.addEventListener('click', () => {
@@ -50,15 +61,18 @@ for (let i = 0; i < squares.length; i++) {
 //CREATING THE FUNCTION TO COMPARE THE PLAYERS SCORE TO THE WINNING COMBINATION
 //the player scores will most like reflect [1,4,2,6,3]. here it contains the number [1,2,3] and that is one of the combinations that can win however i have to find a way to where it can still match the winning arrays dispite the order in the players array
 //probably create a for loop to loop through the winning arrays. from there match what is contained wthin the players score array to winningCombinations[i], but use a spread operator? that way we can look at each individual elements of the array to see if they contain any of it
-for (let i = 0; i < winningCombination.length; i++) {
-    if(player1Score.some(...winningCombination[i])){
-        console.log('this if else statement works');
-    }
-    
-};
 
 
 
+
+
+// player1Score = [0,1,2];
+// function hello(){
+//     return true;
+// }
+// console.log(player1Score.some(() => winningCombination[0]));
+// console.log(player1Score);
+// console.log(winningCombination[0])
 
 
 // //creating a function that signals the winner
