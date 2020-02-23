@@ -49,14 +49,17 @@ for (let i = 0; i < squares.length; i++) {
             squares[i].textContent = 'X';
             player1Score.push(numberedSquares.indexOf(squares[i]));// ex result player1Score=[1,2,3] IT SENDS THE NUMBER I CAN MATCH BY NUMBER
 
-            for (let i = 0; i < winningCombination.length; i++) {
-                if(player1Score.some( () => [winningCombination[i]] )){
-                    console.log(winningCombination[i]);
-                    // console.log('it loops');
-                };// why is it running everytime
+            // for (let i = 0; i < winningCombination.length; i++) {
+            //     if(winningCombination[i].every( () => player1Score )){
+            //         console.log(winningCombination[i]);
+            //         // console.log('it loops');
+            //     };// why is it running everytime
                 
-            }
-            
+            // }
+            if(winningCombination[i].every( () => player1Score )){
+                console.log(winningCombination[i]);
+                // console.log('it loops');
+            };// why is it running everytime
 
       
             player.textContent = 'PLAYER TWO';
