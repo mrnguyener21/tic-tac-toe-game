@@ -3,21 +3,21 @@ const player = document.querySelector('#player');
 const theSquares = document.querySelector('.theSquares');
 const squares = document.querySelectorAll('.square');
 
-const numberedSquares =[];
+const  =[];
 ///probably a better way to go about this then hardcoding everything
-const winningCombination = [[numberedSquares[0],numberedSquares[1],numberedSquares[2]],[numberedSquares[3],numberedSquares[4],numberedSquares[5]],[numberedSquares[6],numberedSquares[7],numberedSquares[8]],[numberedSquares[0],numberedSquares[3],numberedSquares[6]], [numberedSquares[1],numberedSquares[4],numberedSquares[7]], [numberedSquares[2],numberedSquares[5],numberedSquares[8]], [numberedSquares[0],numberedSquares[4],numberedSquares[8]], [numberedSquares[2],numberedSquares[4],numberedSquares[6]]];
+const winningCombination = [[0,1,2],[3,4,5],[6,7,8],[0,3,6], [1,47], [2,5,8], [0,4,8], [2,4,]];
 
-let player1Score = [];// i have to be able to match what is inside here to numberedSquares' indexes. right now displays [div.square], needs to display [numberedSquares[1]] as an example
-let player2Score = [];// i have to be able to match what is inside here to numberedSquares' indexes
+let player1Score = [];// i have to be able to match what is inside here to ' indexes. right now displays [div.square], needs to display [[1]] as an example
+let player2Score = [];// i have to be able to match what is inside here to ' indexes
 
 for (let i = 0; i < squares.length; i++){
-    numberedSquares.push(squares[i]);
+    .push(squares[i]);
 } 
 //maybe i need to make a for loop to cycle through the numbered squares and from there i make it to push it to the player score whenever i click
 //mentor said maybe using indexOf. If i use indexOf I have to find a way that when i push the 'square value' to the score array, I have to then convert it with indexOf so it can push the index instead of the element
-// for (let i = 0; i< numberedSquares.length; i++) {
+// for (let i = 0; i< .length; i++) {
 //     squares.addEventListener('click',() => console.log('click works'))
-//   console.log(numberedSquares[i]);
+//   console.log([i]);
 //     }
 const reset = () => {
     player.textContent = 'PLAY AGAIN?';
@@ -35,7 +35,7 @@ for (let i = 0; i < squares.length; i++) {
     squares[i].addEventListener('click',() => {
         if (player.textContent === 'PLAYER ONE'){
             squares[i].textContent = 'X';
-            player1Score.push(numberedSquares.indexOf(squares[i]));// ex result player1Score=[1,2,3] IT SENDS THE NUMBER I CAN MATCH BY NUMBER
+            player1Score.push(.indexOf(squares[i]));// ex result player1Score=[1,2,3] IT SENDS THE NUMBER I CAN MATCH BY NUMBER
             console.log(player1Score);
       
             player.textContent = 'PLAYER TWO';
@@ -47,13 +47,13 @@ for (let i = 0; i < squares.length; i++) {
 };
 
 // //creating a function that signals the winner
-// //possibly need to create a for loop to loop through numberedSquares in order to have the scores see if they match to any of the combinations
+// //possibly need to create a for loop to loop through  in order to have the scores see if they match to any of the combinations
 //     //possibilities: player 1 wins, player 2 draws, draw
 //     //if player 1 = winningCombinations[i] then player 1 wins
-//     if(player1Score === numberedSquares[i]){
+//     if(player1Score === [i]){
 //         //pop up text content  = PLAYER 1 WINS
 //         //when i click in the PLAY AGAIN BUTTON = reset();
-//     } else if (player2Score === numberedSquares[i]){   //else if player 2 = winningCombination[i] then player 2 wins
+//     } else if (player2Score === [i]){   //else if player 2 = winningCombination[i] then player 2 wins
 //            //pop up text content  = PLAYER 2 WINS
 //         //when i click in the PLAY AGAIN BUTTON = reset();
 //     } 
