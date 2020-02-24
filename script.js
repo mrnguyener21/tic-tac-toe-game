@@ -50,8 +50,8 @@ for (let i = 0; i < squares.length; i++) {
         if (player.textContent === 'PLAYER ONE'){
             squares[i].textContent = 'X';
             console.log(numberedSquares[0]);
-            if(winningCombination[i].textContent === 'X','X','X'){
-                console.log( 'this works');
+            if(winningCombination[i].textContent === 'shd;fiafas'){//why is this being counted as true
+                console.log( squares[i]);
             }
             // player1Score.push(numberedSquares.indexOf(squares[i]));// ex result player1Score=[1,2,3] IT SENDS THE NUMBER I CAN MATCH BY NUMBER
             //if winning i . every ( 
