@@ -47,9 +47,6 @@ for (let i = 0; i < squares.length; i++) {
     squares[i].addEventListener('click',() => {
         if (player.textContent === 'PLAYER ONE'){
             squares[i].textContent = 'X';
-            const array1 = [1,2,3,4];
-            const array2 = [1,3,2,4,5,6];
-            const checkArrays = array1.every()
             player1Score.push(numberedSquares.indexOf(squares[i]));// ex result player1Score=[1,2,3] IT SENDS THE NUMBER I CAN MATCH BY NUMBER
             //if winning i . every ( 
             for (let i = 0; i < winningCombination.length; i++) {
@@ -57,7 +54,7 @@ for (let i = 0; i < squares.length; i++) {
                 // const found = arr1.some(r=> arr2.indexOf(r) >= 0) ES6 version
                 // arr1.every(elem => arr2.indexOf(elem) > -1);
                 // i need to get every array from winningCombination that contains the elements in the player'score
-                if(player1Score.some(winningCombination.indexOf(i))){
+                if(winningCombination[i].every(() => player1Score.some())){
                     console.log(player1Score);
                     console.log(winningCombination);
                     // console.log('it loops');
