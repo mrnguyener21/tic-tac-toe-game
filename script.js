@@ -5,7 +5,9 @@ const squares = document.querySelectorAll('.square');
 
 const numberedSquares =[];
 ///probably a better way to go about this then hardcoding everything
-const winningCombination = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+// 0,1,2 
+const winningCombination = [[numberedSquares[0],numberedSquares[1],numberedSquares[2]],[numberedSquares[3],numberedSquares[4],numberedSquares[5]],[numberedSquares[6],numberedSquares[7],numberedSquares[8]],[numberedSquares[0],numberedSquares[3],numberedSquares[6]], [numberedSquares[1],numberedSquares[4],numberedSquares[7]], [numberedSquares[2],numberedSquares[5],numberedSquares[8]], [numberedSquares[0],numberedSquares[4],numberedSquares[8]], [numberedSquares[2],numberedSquares[4],numberedSquares[6]]];
+;
 
 let player1Score = [];// i have to be able to match what is inside here to numberedSquares' indexes. right now displays [div.square], needs to display [numberedSquares[1]] as an example
 let player2Score = [];// i have to be able to match what is inside here to numberedSquares' indexes
@@ -47,20 +49,20 @@ for (let i = 0; i < squares.length; i++) {
     squares[i].addEventListener('click',() => {
         if (player.textContent === 'PLAYER ONE'){
             squares[i].textContent = 'X';
-            player1Score.push(numberedSquares.indexOf(squares[i]));// ex result player1Score=[1,2,3] IT SENDS THE NUMBER I CAN MATCH BY NUMBER
+            // player1Score.push(numberedSquares.indexOf(squares[i]));// ex result player1Score=[1,2,3] IT SENDS THE NUMBER I CAN MATCH BY NUMBER
             //if winning i . every ( 
-            for (let i = 0; i < winningCombination.length; i++) {
-                // const found = arr1.some(r=> arr2.includes(r)) solution of how to use some and include method from stackOverflow
-                // const found = arr1.some(r=> arr2.indexOf(r) >= 0) ES6 version
-                // arr1.every(elem => arr2.indexOf(elem) > -1);
-                // i need to get every array from winningCombination that contains the elements in the player'score
-                if(winningCombination[i].every(() => player1Score.some())){
-                    console.log(player1Score);
-                    console.log(winningCombination);
-                    // console.log('it loops');
-                };// why is it running everytime
+            // for (let i = 0; i < winningCombination.length; i++) {
+            //     // const found = arr1.some(r=> arr2.includes(r)) solution of how to use some and include method from stackOverflow
+            //     // const found = arr1.some(r=> arr2.indexOf(r) >= 0) ES6 version
+            //     // arr1.every(elem => arr2.indexOf(elem) > -1);
+            //     // i need to get every array from winningCombination that contains the elements in the player'score
+            //     if(winningCombination[i].every(() => player1Score.some())){
+            //         console.log(player1Score);
+            //         console.log(winningCombination);
+            //         // console.log('it loops');
+            //     };// why is it running everytime
                 
-            }
+            // }
             
 
       
@@ -74,7 +76,13 @@ for (let i = 0; i < squares.length; i++) {
         // }
     });
 };
-
+// maybe i can create a function for now to check if the text content for each of the arrays match instead. so if text content of winningCombinations[i]='X' player 1 wins else if winningCombination[i] = 'O' then player 2 wins
+for (let i = 0; i < winningCombination.length; i++) {
+    if(winningCombination[i].textContent = 'X'){
+        console.log('it works');
+    }
+    
+}
 
 //CREATING THE FUNCTION TO COMPARE THE PLAYERS SCORE TO THE WINNING COMBINATION
 //the player scores will most like reflect [1,4,2,6,3]. here it contains the number [1,2,3] and that is one of the combinations that can win however i have to find a way to where it can still match the winning arrays dispite the order in the players array
