@@ -78,8 +78,9 @@ for (let i = 0; i < squares.length; i++) {
 };
 // maybe i can create a function for now to check if the text content for each of the arrays match instead. so if text content of winningCombinations[i]='X' player 1 wins else if winningCombination[i] = 'O' then player 2 wins
 for (let i = 0; i < winningCombination.length; i++) {
-    if(squares[i].textContent === winningCombination[i]){
+    if(winningCombination.textContent === 'X','X','X'){
         console.log('it works');
+        console.log(winningCombination);
     }
     
 }
