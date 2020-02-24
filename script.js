@@ -15,21 +15,7 @@ for (let i = 0; i < squares.length; i++){
     numberedSquares.push(squares[i]);
 } 
     
-//create a function to check everytime we click
-// const checkWinner = () => {
-//     squares.addEventListener('click', () => {
-//         // for (let i = 0; i < winningCombination.length; i++) {
-//         //     if(player1Score.some( () => [...winningCombination[i]] )){
-//         //         console.log('this if else statement works');
-//         //     };
-//         //     console.log("hello");
-//         //     console.log(winningCombination[i]);
-//         //     console.log(i);
-//         // };
-//         console.log('square click works');
-//     }
-// )};
-// checkWinner();
+
 
 const reset = () => {
     player.textContent = 'PLAY AGAIN?';
@@ -51,28 +37,9 @@ for (let i = 0; i < squares.length; i++) {
             console.log(numberedSquares[0], numberedSquares[1], numberedSquares[2]);
             player1Score.push(numberedSquares.indexOf(squares[i]));
 
-
-            //BELOW WERE MY ATTEMPTS WITH SOME AND EVERY METHOD
-            // player1Score.push(numberedSquares.indexOf(squares[i]));
-            //maybe figure a way to write code using the every method to see if all the elements in that array is X or O
-
-            // player1Score.push(numberedSquares.indexOf(squares[i]));// ex result player1Score=[1,2,3] IT SENDS THE NUMBER I CAN MATCH BY NUMBER
-            //if winning i . every ( 
-            // for (let i = 0; i < winningCombination.length; i++) {
-            //     // const found = arr1.some(r=> arr2.includes(r)) solution of how to use some and include method from stackOverflow
-            //     // const found = arr1.some(r=> arr2.indexOf(r) >= 0) ES6 version
-            //     // arr1.every(elem => arr2.indexOf(elem) > -1);
-            //     // i need to get every array from winningCombination that contains the elements in the player'score
-            //     if(winningCombination[i].every(() => player1Score.some())){
-            //         console.log(player1Score);
-            //         console.log(winningCombination);
-            //         // console.log('it loops');
-            //     };// why is it running everytime
-                
-            // }
-            
-
-      
+            if (numberedSquares[0].textContent  === 'X' && numberedSquares[1] === 'X' /*&& numberedSquares[2] === 'X'*/){
+                console.log( 'it works');
+            };
             player.textContent = 'PLAYER TWO';
         } else if (player.textContent === 'PLAYER TWO'){
             player.textContent = 'PLAYER ONE'
@@ -84,13 +51,56 @@ for (let i = 0; i < squares.length; i++) {
     });
 };
 
-if (numberedSquares[0].textContent  ==='X' && numberedSquares[1] === 'X' && numberedSquares[2] === 'X'){
-    console.log( 'it works');
-};
 
 
 
 
+
+
+
+
+
+
+
+
+
+//create a function to check everytime we click
+// const checkWinner = () => {
+//     squares.addEventListener('click', () => {
+//         // for (let i = 0; i < winningCombination.length; i++) {
+//         //     if(player1Score.some( () => [...winningCombination[i]] )){
+//         //         console.log('this if else statement works');
+//         //     };
+//         //     console.log("hello");
+//         //     console.log(winningCombination[i]);
+//         //     console.log(i);
+//         // };
+//         console.log('square click works');
+//     }
+// )};
+// checkWinner();
+
+
+
+                //BELOW WERE MY ATTEMPTS WITH SOME AND EVERY METHOD
+                // player1Score.push(numberedSquares.indexOf(squares[i]));
+                //maybe figure a way to write code using the every method to see if all the elements in that array is X or O
+
+                // player1Score.push(numberedSquares.indexOf(squares[i]));// ex result player1Score=[1,2,3] IT SENDS THE NUMBER I CAN MATCH BY NUMBER
+                //if winning i . every ( 
+                // for (let i = 0; i < winningCombination.length; i++) {
+                //     // const found = arr1.some(r=> arr2.includes(r)) solution of how to use some and include method from stackOverflow
+                //     // const found = arr1.some(r=> arr2.indexOf(r) >= 0) ES6 version
+                //     // arr1.every(elem => arr2.indexOf(elem) > -1);
+                //     // i need to get every array from winningCombination that contains the elements in the player'score
+                //     if(winningCombination[i].every(() => player1Score.some())){
+                //         console.log(player1Score);
+                //         console.log(winningCombination);
+                //         // console.log('it loops');
+                //     };// why is it running everytime
+                    
+                // }
+                
 
 // maybe i can create a function for now to check if the text content for each of the arrays match instead. so if text content of winningCombinations[i]='X' player 1 wins else if winningCombination[i] = 'O' then player 2 wins
 // for (let i = 0; i < winningCombination.length; i++) {
