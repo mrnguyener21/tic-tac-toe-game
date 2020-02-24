@@ -6,8 +6,7 @@ const squares = document.querySelectorAll('.square');
 const numberedSquares =[];
 ///probably a better way to go about this then hardcoding everything
 // 0,1,2 
-const winningCombination = [[numberedSquares[0],numberedSquares[1],numberedSquares[2]],[numberedSquares[3],numberedSquares[4],numberedSquares[5]],[numberedSquares[6],numberedSquares[7],numberedSquares[8]],[numberedSquares[0],numberedSquares[3],numberedSquares[6]], [numberedSquares[1],numberedSquares[4],numberedSquares[7]], [numberedSquares[2],numberedSquares[5],numberedSquares[8]], [numberedSquares[0],numberedSquares[4],numberedSquares[8]], [numberedSquares[2],numberedSquares[4],numberedSquares[6]]];
-;
+const winningCombination = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
 
 let player1Score = [];// i have to be able to match what is inside here to numberedSquares' indexes. right now displays [div.square], needs to display [numberedSquares[1]] as an example
 let player2Score = [];// i have to be able to match what is inside here to numberedSquares' indexes
@@ -49,10 +48,12 @@ for (let i = 0; i < squares.length; i++) {
     squares[i].addEventListener('click',() => {
         if (player.textContent === 'PLAYER ONE'){
             squares[i].textContent = 'X';
-            console.log(numberedSquares[0]);
-            if(winningCombination[i].textContent === 'shd;fiafas'){//why is this being counted as true
-                console.log( squares[i]);
-            }
+            if(['X','X','X'].every(() => winningCombination[i])){
+                console.log( 'it works');
+                console.log(winningCombination[i])
+            };
+            //maybe figure a way to write code using the every method to see if all the elements in that array is X or O
+
             // player1Score.push(numberedSquares.indexOf(squares[i]));// ex result player1Score=[1,2,3] IT SENDS THE NUMBER I CAN MATCH BY NUMBER
             //if winning i . every ( 
             // for (let i = 0; i < winningCombination.length; i++) {
@@ -80,6 +81,8 @@ for (let i = 0; i < squares.length; i++) {
         // }
     });
 };
+
+
 // maybe i can create a function for now to check if the text content for each of the arrays match instead. so if text content of winningCombinations[i]='X' player 1 wins else if winningCombination[i] = 'O' then player 2 wins
 // for (let i = 0; i < winningCombination.length; i++) {
 //     if(winningCombination.textContent === 'X','X','X'){
