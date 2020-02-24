@@ -48,10 +48,13 @@ for (let i = 0; i < squares.length; i++) {
     squares[i].addEventListener('click',() => {
         if (player.textContent === 'PLAYER ONE'){
             squares[i].textContent = 'X';
-            if(['X','X','X'].every(() => winningCombination[i])){
+            console.log(squares[0],squares[1],squares[2]);
+
+            player1Score.push(numberedSquares.indexOf(squares[i]));// ex result player1Score=[1,2,3] IT SENDS THE NUMBER I CAN MATCH BY NUMBER
+            if (squares[0] == squares [1] && squares[1] == squares[2]){
                 console.log( 'it works');
-                console.log(winningCombination[i])
-            };
+            }
+            // player1Score.push(numberedSquares.indexOf(squares[i]));
             //maybe figure a way to write code using the every method to see if all the elements in that array is X or O
 
             // player1Score.push(numberedSquares.indexOf(squares[i]));// ex result player1Score=[1,2,3] IT SENDS THE NUMBER I CAN MATCH BY NUMBER
