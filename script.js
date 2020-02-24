@@ -48,12 +48,11 @@ for (let i = 0; i < squares.length; i++) {
     squares[i].addEventListener('click',() => {
         if (player.textContent === 'PLAYER ONE'){
             squares[i].textContent = 'X';
-            console.log(squares[0],squares[1],squares[2]);
+            console.log(numberedSquares[0], numberedSquares[1], numberedSquares[2]);
+            player1Score.push(numberedSquares.indexOf(squares[i]));
 
-            player1Score.push(numberedSquares.indexOf(squares[i]));// ex result player1Score=[1,2,3] IT SENDS THE NUMBER I CAN MATCH BY NUMBER
-            if (squares[0] == squares [1] && squares[1] == squares[2]){
-                console.log( 'it works');
-            }
+
+            //BELOW WERE MY ATTEMPTS WITH SOME AND EVERY METHOD
             // player1Score.push(numberedSquares.indexOf(squares[i]));
             //maybe figure a way to write code using the every method to see if all the elements in that array is X or O
 
@@ -84,6 +83,13 @@ for (let i = 0; i < squares.length; i++) {
         // }
     });
 };
+
+if (numberedSquares[0] === numberedSquares[1] && numberedSquares[1] === numberedSquares[2]){
+    console.log( 'it works');
+};
+
+
+
 
 
 // maybe i can create a function for now to check if the text content for each of the arrays match instead. so if text content of winningCombinations[i]='X' player 1 wins else if winningCombination[i] = 'O' then player 2 wins
