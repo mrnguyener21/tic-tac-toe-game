@@ -49,6 +49,10 @@ for (let i = 0; i < squares.length; i++) {
     squares[i].addEventListener('click',() => {
         if (player.textContent === 'PLAYER ONE'){
             squares[i].textContent = 'X';
+            console.log(numberedSquares[0]);
+            if(winningCombination[i].textContent === 'X','X','X'){
+                console.log( 'this works');
+            }
             // player1Score.push(numberedSquares.indexOf(squares[i]));// ex result player1Score=[1,2,3] IT SENDS THE NUMBER I CAN MATCH BY NUMBER
             //if winning i . every ( 
             // for (let i = 0; i < winningCombination.length; i++) {
@@ -84,7 +88,8 @@ for (let i = 0; i < squares.length; i++) {
 //     }
     
 // }
-console.log(winningCombination[0].textContent);
+//this needs to continuously be checking this test doesn't work because it runs before i click on a square which inserts the 'X'
+
 //CREATING THE FUNCTION TO COMPARE THE PLAYERS SCORE TO THE WINNING COMBINATION
 //the player scores will most like reflect [1,4,2,6,3]. here it contains the number [1,2,3] and that is one of the combinations that can win however i have to find a way to where it can still match the winning arrays dispite the order in the players array
 //probably create a for loop to loop through the winning arrays. from there match what is contained wthin the players score array to winningCombinations[i], but use a spread operator? that way we can look at each individual elements of the array to see if they contain any of it
