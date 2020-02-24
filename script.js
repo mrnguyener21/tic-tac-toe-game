@@ -84,7 +84,7 @@ for (let i = 0; i < squares.length; i++) {
     });
 };
 
-if (numberedSquares[0] === numberedSquares[1] && numberedSquares[1] === numberedSquares[2]){
+if (numberedSquares[0].textContent  ==='X' && numberedSquares[1] === 'X' && numberedSquares[2] === 'X'){
     console.log( 'it works');
 };
 
