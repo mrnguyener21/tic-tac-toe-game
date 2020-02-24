@@ -37,7 +37,7 @@ for (let i = 0; i < squares.length; i++) {
             console.log(numberedSquares[0], numberedSquares[1], numberedSquares[2]);
             player1Score.push(numberedSquares.indexOf(squares[i]));
 
-            if (numberedSquares[0].textContent  === 'X' && numberedSquares[1] === 'X' /*&& numberedSquares[2] === 'X'*/){
+            if (numberedSquares[0].textContent  === 'X' && numberedSquares[1].textContent  === 'X' &&numberedSquares[2].textContent  === 'X'  ){
                 console.log( 'it works');
             };
             player.textContent = 'PLAYER TWO';
