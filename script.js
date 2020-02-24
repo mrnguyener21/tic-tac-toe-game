@@ -77,14 +77,14 @@ for (let i = 0; i < squares.length; i++) {
     });
 };
 // maybe i can create a function for now to check if the text content for each of the arrays match instead. so if text content of winningCombinations[i]='X' player 1 wins else if winningCombination[i] = 'O' then player 2 wins
-for (let i = 0; i < winningCombination.length; i++) {
-    if(winningCombination.textContent === 'X','X','X'){
-        console.log('it works');
-        console.log(winningCombination);
-    }
+// for (let i = 0; i < winningCombination.length; i++) {
+//     if(winningCombination.textContent === 'X','X','X'){
+//         console.log('it works');
+//         console.log(winningCombination);
+//     }
     
-}
-
+// }
+console.log(winningCombination[0].textContent);
 //CREATING THE FUNCTION TO COMPARE THE PLAYERS SCORE TO THE WINNING COMBINATION
 //the player scores will most like reflect [1,4,2,6,3]. here it contains the number [1,2,3] and that is one of the combinations that can win however i have to find a way to where it can still match the winning arrays dispite the order in the players array
 //probably create a for loop to loop through the winning arrays. from there match what is contained wthin the players score array to winningCombinations[i], but use a spread operator? that way we can look at each individual elements of the array to see if they contain any of it
