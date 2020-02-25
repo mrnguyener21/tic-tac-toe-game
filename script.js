@@ -90,14 +90,18 @@ for (let i = 0; i < squares.length; i++) {
         }
         else if(numberedSquares[2].textContent  === 'O' && numberedSquares[4].textContent  === 'O' &&numberedSquares[6].textContent  === 'O'){
             console.log( 'it works')
-        }
-        else {
-            console.log ('draw')
         };
     });
+
 };
 //CREATE A FUNCTION TO DETERMINE A DRAW
-// a draw means that all the squares has a string contained in it, but none of them line up
+// a draw means that all the squares has a string contained in it, but none of them line up. so if every square contains a string, console.log 'draw'
+numberedSquares.forEach(() => {
+    if (numberedSquares.textContent !== 'X' || 'O'){
+        console.log('draw');
+    };
+    
+});
 
 //CREATE A FUNCTION SO THE GAME CAN'T CONTINUE IF A WINNER OR DRAW IS DETERMINED
 
