@@ -44,6 +44,7 @@ for (let i = 0; i < squares.length; i++) {
         // if(player1Score.some( () => [...winningCombination[i]] )){
         //     console.log('this if else statement works');
         // }
+        //WINNING COMBO FOR PLAYER 1 
         if (numberedSquares[0].textContent  === 'X' && numberedSquares[1].textContent  === 'X' &&numberedSquares[2].textContent  === 'X'){
             console.log( 'it works');//why doesn't it work if i don't use textcontent???
         } 
@@ -67,7 +68,33 @@ for (let i = 0; i < squares.length; i++) {
         }
         else if(numberedSquares[2].textContent  === 'X' && numberedSquares[4].textContent  === 'X' &&numberedSquares[6].textContent  === 'X'){
             console.log( 'it works')
+        };
+        // WINNING COMBO FOR PLAYER 2
+        if (numberedSquares[0].textContent  === 'O' && numberedSquares[1].textContent  === 'O' &&numberedSquares[2].textContent  === 'O'){
+            console.log( 'it works');//why doesn't it work if i don't use textcontent???
+        } 
+        else if(numberedSquares[3].textContent  === 'O' && numberedSquares[4].textContent  === 'O' &&numberedSquares[5].textContent  === 'O'){
+            console.log( 'it works')
         }
+        else if(numberedSquares[6].textContent  === 'O' && numberedSquares[7].textContent  === 'O' &&numberedSquares[8].textContent  === 'O'){
+            console.log( 'it works')
+        }
+        else if(numberedSquares[0].textContent  === 'O' && numberedSquares[3].textContent  === 'O' &&numberedSquares[6].textContent  === 'O'){
+            console.log( 'it works')
+        }
+        else if(numberedSquares[1].textContent  === 'O' && numberedSquares[4].textContent  === 'O' &&numberedSquares[7].textContent  === 'O'){
+            console.log( 'it works')
+        }
+        else if(numberedSquares[2].textContent  === 'O' && numberedSquares[5].textContent  === 'O' &&numberedSquares[8].textContent  === 'O'){
+            console.log( 'it works')
+        }
+        else if(numberedSquares[0].textContent  === 'O' && numberedSquares[4].textContent  === 'O' &&numberedSquares[8].textContent  === 'O'){
+            console.log( 'it works')
+        }
+        else if(numberedSquares[2].textContent  === 'O' && numberedSquares[4].textContent  === 'O' &&numberedSquares[6].textContent  === 'O'){
+            console.log( 'it works')
+        };
+
     });
 };
 
