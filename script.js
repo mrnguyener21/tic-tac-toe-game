@@ -44,6 +44,8 @@ for (let i = 0; i < squares.length; i++) {
         // if(player1Score.some( () => [...winningCombination[i]] )){
         //     console.log('this if else statement works');
         // }
+
+        //i can probably be more concise by using the same concept but looping through winning combinations and call the array within the array. so winningcombo[i][0] ===so winningcombo[i][1] &&winningcombo[i][1] === winningcombo[i][2]
         //WINNING COMBO FOR PLAYER 1 
         if (numberedSquares[0].textContent  === 'X' && numberedSquares[1].textContent  === 'X' &&numberedSquares[2].textContent  === 'X'){
             console.log( 'it works');//why doesn't it work if i don't use textcontent???
@@ -106,91 +108,3 @@ for (let i = 0; i < squares.length; i++) {
 
 
 
-
-
-
-
-
-//create a function to check everytime we click
-// const checkWinner = () => {
-//     squares.addEventListener('click', () => {
-//         // for (let i = 0; i < winningCombination.length; i++) {
-//         //     if(player1Score.some( () => [...winningCombination[i]] )){
-//         //         console.log('this if else statement works');
-//         //     };
-//         //     console.log("hello");
-//         //     console.log(winningCombination[i]);
-//         //     console.log(i);
-//         // };
-//         console.log('square click works');
-//     }
-// )};
-// checkWinner();
-
-
-
-                //BELOW WERE MY ATTEMPTS WITH SOME AND EVERY METHOD
-                // player1Score.push(numberedSquares.indexOf(squares[i]));
-                //maybe figure a way to write code using the every method to see if all the elements in that array is X or O
-
-                // player1Score.push(numberedSquares.indexOf(squares[i]));// ex result player1Score=[1,2,3] IT SENDS THE NUMBER I CAN MATCH BY NUMBER
-                //if winning i . every ( 
-                // for (let i = 0; i < winningCombination.length; i++) {
-                //     // const found = arr1.some(r=> arr2.includes(r)) solution of how to use some and include method from stackOverflow
-                //     // const found = arr1.some(r=> arr2.indexOf(r) >= 0) ES6 version
-                //     // arr1.every(elem => arr2.indexOf(elem) > -1);
-                //     // i need to get every array from winningCombination that contains the elements in the player'score
-                //     if(winningCombination[i].every(() => player1Score.some())){
-                //         console.log(player1Score);
-                //         console.log(winningCombination);
-                //         // console.log('it loops');
-                //     };// why is it running everytime
-                    
-                // }
-                
-
-// maybe i can create a function for now to check if the text content for each of the arrays match instead. so if text content of winningCombinations[i]='X' player 1 wins else if winningCombination[i] = 'O' then player 2 wins
-// for (let i = 0; i < winningCombination.length; i++) {
-//     if(winningCombination.textContent === 'X','X','X'){
-//         console.log('it works');
-//         console.log(winningCombination);
-//     }
-    
-// }
-//this needs to continuously be checking this test doesn't work because it runs before i click on a square which inserts the 'X'
-
-//CREATING THE FUNCTION TO COMPARE THE PLAYERS SCORE TO THE WINNING COMBINATION
-//the player scores will most like reflect [1,4,2,6,3]. here it contains the number [1,2,3] and that is one of the combinations that can win however i have to find a way to where it can still match the winning arrays dispite the order in the players array
-//probably create a for loop to loop through the winning arrays. from there match what is contained wthin the players score array to winningCombinations[i], but use a spread operator? that way we can look at each individual elements of the array to see if they contain any of it
-
-
-
-
-
-// player1Score = [0,1,2];
-// function hello(){
-//     return true;
-// }
-// console.log(player1Score.some(() => winningCombination[0]));
-// console.log(player1Score);
-// console.log(winningCombination[0])
-
-
-// //creating a function that signals the winner
-// //possibly need to create a for loop to loop through numberedSquares in order to have the scores see if they match to any of the combinations
-//     //possibilities: player 1 wins, player 2 draws, draw
-//     //if player 1 = winningCombinations[i] then player 1 wins
-//     if(player1Score === numberedSquares[i]){
-//         //pop up text content  = PLAYER 1 WINS
-//         //when i click in the PLAY AGAIN BUTTON = reset();
-//     } else if (player2Score === numberedSquares[i]){   //else if player 2 = winningCombination[i] then player 2 wins
-//            //pop up text content  = PLAYER 2 WINS
-//         //when i click in the PLAY AGAIN BUTTON = reset();
-//     } 
-//     //if all the squares have text in them then that's a draw. 
-        //if (player.textContent = 'X || player.textContent = 'O'){
-            //pop up text content = DRAW
-            //when I click in the PLAY AGAIN BUTTON = reset()'
-        //}
-//     //figure out a function to end the game if any of the above three statements are executed
-//     //create a function for a pop up screen to appear
