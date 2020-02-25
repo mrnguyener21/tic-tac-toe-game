@@ -14,8 +14,6 @@ let player2Score = [];// i have to be able to match what is inside here to numbe
 for (let i = 0; i < squares.length; i++){
     numberedSquares.push(squares[i]);
 } 
-    
-
 
 const reset = () => {
     player.textContent = 'PLAY AGAIN?';
@@ -37,9 +35,7 @@ for (let i = 0; i < squares.length; i++) {
             console.log(numberedSquares[0], numberedSquares[1], numberedSquares[2]);
             player1Score.push(numberedSquares.indexOf(squares[i]));
 
-            if (numberedSquares[0].textContent  === 'X' && numberedSquares[1].textContent  === 'X' &&numberedSquares[2].textContent  === 'X'  ){
-                console.log( 'it works');
-            };
+
             player.textContent = 'PLAYER TWO';
         } else if (player.textContent === 'PLAYER TWO'){
             player.textContent = 'PLAYER ONE'
@@ -48,6 +44,30 @@ for (let i = 0; i < squares.length; i++) {
         // if(player1Score.some( () => [...winningCombination[i]] )){
         //     console.log('this if else statement works');
         // }
+        if (numberedSquares[0].textContent  === 'X' && numberedSquares[1].textContent  === 'X' &&numberedSquares[2].textContent  === 'X'){
+            console.log( 'it works');//why doesn't it work if i don't use textcontent???
+        } 
+        else if(numberedSquares[3].textContent  === 'X' && numberedSquares[4].textContent  === 'X' &&numberedSquares[5].textContent  === 'X'){
+            console.log( 'it works')
+        }
+        else if(numberedSquares[6].textContent  === 'X' && numberedSquares[7].textContent  === 'X' &&numberedSquares[8].textContent  === 'X'){
+            console.log( 'it works')
+        }
+        else if(numberedSquares[0].textContent  === 'X' && numberedSquares[3].textContent  === 'X' &&numberedSquares[6].textContent  === 'X'){
+            console.log( 'it works')
+        }
+        else if(numberedSquares[1].textContent  === 'X' && numberedSquares[4].textContent  === 'X' &&numberedSquares[7].textContent  === 'X'){
+            console.log( 'it works')
+        }
+        else if(numberedSquares[2].textContent  === 'X' && numberedSquares[5].textContent  === 'X' &&numberedSquares[8].textContent  === 'X'){
+            console.log( 'it works')
+        }
+        else if(numberedSquares[0].textContent  === 'X' && numberedSquares[4].textContent  === 'X' &&numberedSquares[8].textContent  === 'X'){
+            console.log( 'it works')
+        }
+        else if(numberedSquares[2].textContent  === 'X' && numberedSquares[4].textContent  === 'X' &&numberedSquares[6].textContent  === 'X'){
+            console.log( 'it works')
+        }
     });
 };
 
