@@ -100,8 +100,8 @@ else if(numberedSquares[2].textContent  === 'O' && numberedSquares[4].textConten
 //CREATE A FUNCTION TO DETERMINE A DRAW
 // a draw means that all the squares has a string contained in it, but none of them line up. so if every square contains a string, console.log 'draw'
 const draw = () => {
-    const x = numberedSquares.textContent('X');
-    const o =  numberedSquares.textContent('O');
+    const x = 'X'
+    const o =  'O';
     const determingADraw = () => {
         numberedSquares.forEach(() => {
             //i need a condition to where the if statement won't run until all 9 squares contains a string
@@ -109,6 +109,7 @@ const draw = () => {
             if ((numberedSquares.every(() => x || o))){
                 console.log('draw');
             };
+            console.log('determine a draw is good');
         }); 
     };
 return determingADraw;
