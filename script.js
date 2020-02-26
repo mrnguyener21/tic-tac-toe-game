@@ -106,7 +106,7 @@ const draw = () => {
         numberedSquares.forEach(() => {
             //i need a condition to where the if statement won't run until all 9 squares contains a string
             // for each square if every square has a string of 'X' or 'O' 
-            if ((numberedSquares.every(() => x || o))){
+            if ((numberedSquares.every(() => 'X' || 'O'))){
                 console.log('draw');
             };
             console.log('determine a draw is good');
@@ -115,6 +115,8 @@ const draw = () => {
 return determingADraw;
 };
 draw();
+
+
 //CREATE A FUNCTION SO THE GAME CAN'T CONTINUE IF A WINNER OR DRAW IS DETERMINED
 
 //CREATE A FUNCTION SO IF THE SQUARE CONTAINS A TEXT THE OTHER PLAYER CAN'T OVERWRITE IT
