@@ -90,31 +90,32 @@ for (let i = 0; i < squares.length; i++) {
             console.log( 'it works')
         };
     });
-
+    if ((numberedSquares.every(() => numberedSquares.textContent === 'X'||numberedSquares.textContent === 'O' ))){
+        console.log('draw');
+    };
 };
 
+const array = ['x','x','x','x']
+array.every(() => array === 'x')
 //i can probably be more concise by using the same concept but looping through winning combinations and call the array within the array. so winningcombo[i][0] ===so winningcombo[i][1] &&winningcombo[i][1] === winningcombo[i][2]
 //WINNING COMBO FOR PLAYER 1 
 
 
 //CREATE A FUNCTION TO DETERMINE A DRAW
 // a draw means that all the squares has a string contained in it, but none of them line up. so if every square contains a string, console.log 'draw'
-const draw = () => {
-    const x = 'X'
-    const o =  'O';
-    const determingADraw = () => {
-        numberedSquares.forEach(() => {
-            //i need a condition to where the if statement won't run until all 9 squares contains a string
-            // for each square if every square has a string of 'X' or 'O' 
-            if ((numberedSquares.every(() => numberedSquares.textContent === 'X'||numberedSquares.textContent === 'O' ))){
-                console.log('draw');
-            };
-            console.log('determine a draw is good');
-        }); 
-    };
-return determingADraw;
-};
-draw();
+// const draw = () => {
+
+//     numberedSquares.forEach(() => {
+//         //i need a condition to where the if statement won't run until all 9 squares contains a string
+//         // for each square if every square has a string of 'X' or 'O' 
+//         if ((numberedSquares.every(() => numberedSquares.textContent === 'X'||numberedSquares.textContent === 'O' ))){
+//             console.log('draw');
+//         };
+//         console.log('determine a draw is good');
+//     }); 
+
+// };
+// draw();
 
 
 //CREATE A FUNCTION SO THE GAME CAN'T CONTINUE IF A WINNER OR DRAW IS DETERMINED
