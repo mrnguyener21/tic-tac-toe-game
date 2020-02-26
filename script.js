@@ -43,7 +43,7 @@ for (let i = 0; i < squares.length; i++) {
         //for some reason the below code doesnt work in the global scope;
         if (numberedSquares[0].textContent  === 'X' && numberedSquares[1].textContent  === 'X' &&numberedSquares[2].textContent  === 'X'){
             console.log( 'it works');//why doesn't it work if i don't use textcontent???
-            player.textContent = 'PLAY AGAIN?'
+            player.textContent = 'PLAY AGAIN?' //prevents from adding another x or o but the console log is still countin whenever we click
         } 
         else if(numberedSquares[3].textContent  === 'X' && numberedSquares[4].textContent  === 'X' &&numberedSquares[5].textContent  === 'X'){
             console.log( 'it works')
@@ -91,10 +91,17 @@ for (let i = 0; i < squares.length; i++) {
             console.log( 'it works')
         }
         else if ((numberedSquares.every((numberedSquares) => numberedSquares.textContent === 'X'||numberedSquares.textContent === 'O' ))){
-    console.log('draw');// why do i need a parameter
-};
-    });
+        console.log('draw');// why do i need a parameter
+        };
 
+
+        if(player.textContent === 'PLAY AGAIN?'){
+            player.addEventListener('click', () => {
+                numberedSquares.textContent = '';
+                player.textContent = 'PLAYER ONE';
+            });
+        }
+    });
 };
 
 //CREATE A FUNCTION SO THE GAME CAN'T CONTINUE IF A WINNER OR DRAW IS DETERMINED
