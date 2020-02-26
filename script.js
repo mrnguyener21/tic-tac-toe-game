@@ -41,63 +41,71 @@ for (let i = 0; i < squares.length; i++) {
             squares[i].textContent = 'O'; 
         };
 
-        //i can probably be more concise by using the same concept but looping through winning combinations and call the array within the array. so winningcombo[i][0] ===so winningcombo[i][1] &&winningcombo[i][1] === winningcombo[i][2]
-        //WINNING COMBO FOR PLAYER 1 
-        if (numberedSquares[0].textContent  === 'X' && numberedSquares[1].textContent  === 'X' &&numberedSquares[2].textContent  === 'X'){
-            console.log( 'it works');//why doesn't it work if i don't use textcontent???
-        } 
-        else if(numberedSquares[3].textContent  === 'X' && numberedSquares[4].textContent  === 'X' &&numberedSquares[5].textContent  === 'X'){
-            console.log( 'it works')
-        }
-        else if(numberedSquares[6].textContent  === 'X' && numberedSquares[7].textContent  === 'X' &&numberedSquares[8].textContent  === 'X'){
-            console.log( 'it works')
-        }
-        else if(numberedSquares[0].textContent  === 'X' && numberedSquares[3].textContent  === 'X' &&numberedSquares[6].textContent  === 'X'){
-            console.log( 'it works')
-        }
-        else if(numberedSquares[1].textContent  === 'X' && numberedSquares[4].textContent  === 'X' &&numberedSquares[7].textContent  === 'X'){
-            console.log( 'it works')
-        }
-        else if(numberedSquares[2].textContent  === 'X' && numberedSquares[5].textContent  === 'X' &&numberedSquares[8].textContent  === 'X'){
-            console.log( 'it works')
-        }
-        else if(numberedSquares[0].textContent  === 'X' && numberedSquares[4].textContent  === 'X' &&numberedSquares[8].textContent  === 'X'){
-            console.log( 'it works')
-        }
-        else if(numberedSquares[2].textContent  === 'X' && numberedSquares[4].textContent  === 'X' &&numberedSquares[6].textContent  === 'X'){
-            console.log( 'it works')
-
-        }else if (numberedSquares[0].textContent  === 'O' && numberedSquares[1].textContent  === 'O' &&numberedSquares[2].textContent  === 'O'){
-            console.log( 'it works');//why doesn't it work if i don't use textcontent???
-        } 
-        else if(numberedSquares[3].textContent  === 'O' && numberedSquares[4].textContent  === 'O' &&numberedSquares[5].textContent  === 'O'){
-            console.log( 'it works')
-        }
-        else if(numberedSquares[6].textContent  === 'O' && numberedSquares[7].textContent  === 'O' &&numberedSquares[8].textContent  === 'O'){
-            console.log( 'it works')
-        }
-        else if(numberedSquares[0].textContent  === 'O' && numberedSquares[3].textContent  === 'O' &&numberedSquares[6].textContent  === 'O'){
-            console.log( 'it works')
-        }
-        else if(numberedSquares[1].textContent  === 'O' && numberedSquares[4].textContent  === 'O' &&numberedSquares[7].textContent  === 'O'){
-            console.log( 'it works')
-        }
-        else if(numberedSquares[2].textContent  === 'O' && numberedSquares[5].textContent  === 'O' &&numberedSquares[8].textContent  === 'O'){
-            console.log( 'it works')
-        }
-        else if(numberedSquares[0].textContent  === 'O' && numberedSquares[4].textContent  === 'O' &&numberedSquares[8].textContent  === 'O'){
-            console.log( 'it works')
-        }
-        else if(numberedSquares[2].textContent  === 'O' && numberedSquares[4].textContent  === 'O' &&numberedSquares[6].textContent  === 'O'){
-            console.log( 'it works')
-        };
+       
     });
 
 };
+
+//i can probably be more concise by using the same concept but looping through winning combinations and call the array within the array. so winningcombo[i][0] ===so winningcombo[i][1] &&winningcombo[i][1] === winningcombo[i][2]
+//WINNING COMBO FOR PLAYER 1 
+if (numberedSquares[0].textContent  === 'X' && numberedSquares[1].textContent  === 'X' &&numberedSquares[2].textContent  === 'X'){
+    console.log( 'it works');//why doesn't it work if i don't use textcontent???
+} 
+else if(numberedSquares[3].textContent  === 'X' && numberedSquares[4].textContent  === 'X' &&numberedSquares[5].textContent  === 'X'){
+    console.log( 'it works')
+}
+else if(numberedSquares[6].textContent  === 'X' && numberedSquares[7].textContent  === 'X' &&numberedSquares[8].textContent  === 'X'){
+    console.log( 'it works')
+}
+else if(numberedSquares[0].textContent  === 'X' && numberedSquares[3].textContent  === 'X' &&numberedSquares[6].textContent  === 'X'){
+    console.log( 'it works')
+}
+else if(numberedSquares[1].textContent  === 'X' && numberedSquares[4].textContent  === 'X' &&numberedSquares[7].textContent  === 'X'){
+    console.log( 'it works')
+}
+else if(numberedSquares[2].textContent  === 'X' && numberedSquares[5].textContent  === 'X' &&numberedSquares[8].textContent  === 'X'){
+    console.log( 'it works')
+}
+else if(numberedSquares[0].textContent  === 'X' && numberedSquares[4].textContent  === 'X' &&numberedSquares[8].textContent  === 'X'){
+    console.log( 'it works')
+}
+else if(numberedSquares[2].textContent  === 'X' && numberedSquares[4].textContent  === 'X' &&numberedSquares[6].textContent  === 'X'){
+    console.log( 'it works')
+
+}else if (numberedSquares[0].textContent  === 'O' && numberedSquares[1].textContent  === 'O' &&numberedSquares[2].textContent  === 'O'){
+    console.log( 'it works');//why doesn't it work if i don't use textcontent???
+} 
+else if(numberedSquares[3].textContent  === 'O' && numberedSquares[4].textContent  === 'O' &&numberedSquares[5].textContent  === 'O'){
+    console.log( 'it works')
+}
+else if(numberedSquares[6].textContent  === 'O' && numberedSquares[7].textContent  === 'O' &&numberedSquares[8].textContent  === 'O'){
+    console.log( 'it works')
+}
+else if(numberedSquares[0].textContent  === 'O' && numberedSquares[3].textContent  === 'O' &&numberedSquares[6].textContent  === 'O'){
+    console.log( 'it works')
+}
+else if(numberedSquares[1].textContent  === 'O' && numberedSquares[4].textContent  === 'O' &&numberedSquares[7].textContent  === 'O'){
+    console.log( 'it works')
+}
+else if(numberedSquares[2].textContent  === 'O' && numberedSquares[5].textContent  === 'O' &&numberedSquares[8].textContent  === 'O'){
+    console.log( 'it works')
+}
+else if(numberedSquares[0].textContent  === 'O' && numberedSquares[4].textContent  === 'O' &&numberedSquares[8].textContent  === 'O'){
+    console.log( 'it works')
+}
+else if(numberedSquares[2].textContent  === 'O' && numberedSquares[4].textContent  === 'O' &&numberedSquares[6].textContent  === 'O'){
+    console.log( 'it works')
+};
+
 //CREATE A FUNCTION TO DETERMINE A DRAW
 // a draw means that all the squares has a string contained in it, but none of them line up. so if every square contains a string, console.log 'draw'
+const draw = (numberedSquares) => {
+
+}
 numberedSquares.forEach(() => {
-    if (numberedSquares.textContent !== 'X' || 'O'){
+    //i need a condition to where the if statement won't run until all 9 squares contains a string
+    // for each square if every square has a string of 'X' or 'O' 
+    if ((numberedSquares.every(() => 'X' || 'O'))){
         console.log('draw');
     };
     
