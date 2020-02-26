@@ -25,9 +25,7 @@ const reset = () => {
 
 player.addEventListener('click', () => player.textContent = 'PLAYER ONE');
 
-if ((numberedSquares.every((numberedSquares) => numberedSquares.textContent === 'X'||numberedSquares.textContent === 'O' ))){
-    console.log('draw');
-};
+
 for (let i = 0; i < squares.length; i++) {
 
     squares[i].addEventListener('click',() => {
@@ -45,6 +43,7 @@ for (let i = 0; i < squares.length; i++) {
         //for some reason the below code doesnt work in the global scope;
         if (numberedSquares[0].textContent  === 'X' && numberedSquares[1].textContent  === 'X' &&numberedSquares[2].textContent  === 'X'){
             console.log( 'it works');//why doesn't it work if i don't use textcontent???
+            player.textContent = 'PLAY AGAIN?'
         } 
         else if(numberedSquares[3].textContent  === 'X' && numberedSquares[4].textContent  === 'X' &&numberedSquares[5].textContent  === 'X'){
             console.log( 'it works')
@@ -90,38 +89,13 @@ for (let i = 0; i < squares.length; i++) {
         }
         else if(numberedSquares[2].textContent  === 'O' && numberedSquares[4].textContent  === 'O' &&numberedSquares[6].textContent  === 'O'){
             console.log( 'it works')
-        };
-        if ((numberedSquares.every((numberedSquares) => numberedSquares.textContent === 'X'||numberedSquares.textContent === 'O' ))){
-    console.log('draw');
+        }
+        else if ((numberedSquares.every((numberedSquares) => numberedSquares.textContent === 'X'||numberedSquares.textContent === 'O' ))){
+    console.log('draw');// why do i need a parameter
 };
     });
 
 };
-
-// const array = ['x','x','x','x'];
-// if(array.every((array) => array === 'x')){
-//     console.log('i understand every method')
-// };
-//i can probably be more concise by using the same concept but looping through winning combinations and call the array within the array. so winningcombo[i][0] ===so winningcombo[i][1] &&winningcombo[i][1] === winningcombo[i][2]
-//WINNING COMBO FOR PLAYER 1 
-
-
-//CREATE A FUNCTION TO DETERMINE A DRAW
-// a draw means that all the squares has a string contained in it, but none of them line up. so if every square contains a string, console.log 'draw'
-// const draw = () => {
-
-//     numberedSquares.forEach(() => {
-//         //i need a condition to where the if statement won't run until all 9 squares contains a string
-//         // for each square if every square has a string of 'X' or 'O' 
-//         if ((numberedSquares.every(() => numberedSquares.textContent === 'X'||numberedSquares.textContent === 'O' ))){
-//             console.log('draw');
-//         };
-//         console.log('determine a draw is good');
-//     }); 
-
-// };
-// draw();
-
 
 //CREATE A FUNCTION SO THE GAME CAN'T CONTINUE IF A WINNER OR DRAW IS DETERMINED
 
