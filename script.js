@@ -99,18 +99,21 @@ else if(numberedSquares[2].textContent  === 'O' && numberedSquares[4].textConten
 
 //CREATE A FUNCTION TO DETERMINE A DRAW
 // a draw means that all the squares has a string contained in it, but none of them line up. so if every square contains a string, console.log 'draw'
-const draw = (numberedSquares) => {
-
-}
-numberedSquares.forEach(() => {
-    //i need a condition to where the if statement won't run until all 9 squares contains a string
-    // for each square if every square has a string of 'X' or 'O' 
-    if ((numberedSquares.every(() => 'X' || 'O'))){
-        console.log('draw');
+const draw = () => {
+    const x = numberedSquares.textContent('X');
+    const o =  numberedSquares.textContent('O');
+    const determingADraw = () => {
+        numberedSquares.forEach(() => {
+            //i need a condition to where the if statement won't run until all 9 squares contains a string
+            // for each square if every square has a string of 'X' or 'O' 
+            if ((numberedSquares.every(() => x || o))){
+                console.log('draw');
+            };
+        }); 
     };
-    
-});
-
+return determingADraw;
+};
+draw();
 //CREATE A FUNCTION SO THE GAME CAN'T CONTINUE IF A WINNER OR DRAW IS DETERMINED
 
 //CREATE A FUNCTION SO IF THE SQUARE CONTAINS A TEXT THE OTHER PLAYER CAN'T OVERWRITE IT
