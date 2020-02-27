@@ -35,15 +35,17 @@ for (let i = 0; i < squares.length; i++) {
         if (player.textContent === 'PLAYER ONE'){
             squares[i].textContent = 'X';
             player1Score.push(numberedSquares.indexOf(squares[i]));
-            console.log(player1Score);
             player.textContent = 'PLAYER TWO';
         } else if (player.textContent === 'PLAYER TWO'){
             player.textContent = 'PLAYER ONE'
             squares[i].textContent = 'O'; 
         };
         // if some of the elements in the player1score array matches with some of the elements in the winningcombination array, console.log player 1 wins
-         if(player1Score.some(() => winningCombination[0])){
+         if(player1Score.some(() => winningCombination.every((winningCombination) => winningCombination[i]))){
              console.log( 'it works')
+             console.log(player1Score);
+             console.log(winningCombination[i]);
+             console.log(winningCombination[i][i]);
          };
 
         //for some reason the below code doesnt work in the global scope;
