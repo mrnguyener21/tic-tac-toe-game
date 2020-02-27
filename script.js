@@ -25,8 +25,9 @@ const reset = () => {
 
 player.addEventListener('click', () => player.textContent = 'PLAYER ONE');
 
-const array = [0,1,2];
-// if (array.some(() => [0,4,1,5,2])){
+// const array = [0,1,2];
+// const array2 = [[0,1,2],[,3,4,5]];
+// if (array.some(() => array2[1])){
 //     console.log('i understand the some method');
 // }
 for (let i = 0; i < squares.length; i++) {
@@ -40,13 +41,7 @@ for (let i = 0; i < squares.length; i++) {
             player.textContent = 'PLAYER ONE'
             squares[i].textContent = 'O'; 
         };
-        // if some of the elements in the player1score array matches with some of the elements in the winningcombination array, console.log player 1 wins
-         if(player1Score.some(() => winningCombination.every((winningCombination) => winningCombination[i.indexOf(i)]))){
-             console.log( 'it works')
-             console.log(player1Score);
-             console.log(winningCombination[i]);
-             console.log(winningCombination[i][i]);
-         };
+
 
         //for some reason the below code doesnt work in the global scope;
         // if (numberedSquares[0].textContent  === 'X' && numberedSquares[1].textContent  === 'X' &&numberedSquares[2].textContent  === 'X'){
@@ -127,6 +122,13 @@ for (let i = 0; i < squares.length; i++) {
             });
         }
     });
+};
+
+// if some of the elements in the player1score array matches with some of the elements in the winningcombination array, console.log player 1 wins
+//if every element within index i of matches some elements of player 1 score console.log the winner
+for (let i = 0; i < winningCombination.length; i++) {
+    winningCombination[i].every((player1Score) => player1Score.some)
+    console.log( 'it works')
 };
 
 
