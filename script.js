@@ -25,90 +25,96 @@ const reset = () => {
 
 player.addEventListener('click', () => player.textContent = 'PLAYER ONE');
 
-
+const array = [0,1,2];
+if (array.some(() => [0,4,1,5,2])){
+    console.log('i understand the some method');
+}
 for (let i = 0; i < squares.length; i++) {
 
     squares[i].addEventListener('click',() => {
         if (player.textContent === 'PLAYER ONE'){
             squares[i].textContent = 'X';
-            console.log(numberedSquares[0], numberedSquares[1], numberedSquares[2]);
             player1Score.push(numberedSquares.indexOf(squares[i]));
-
-
+            console.log(player1Score);
             player.textContent = 'PLAYER TWO';
         } else if (player.textContent === 'PLAYER TWO'){
             player.textContent = 'PLAYER ONE'
             squares[i].textContent = 'O'; 
         };
+        // if some of the elements in the player1score array matches with some of the elements in the winningcombination array, console.log player 1 wins
+         if(player1Score.some((winningCombination) => winningCombination[0])){
+             console.log( 'it works')
+         };
+
         //for some reason the below code doesnt work in the global scope;
-        if (numberedSquares[0].textContent  === 'X' && numberedSquares[1].textContent  === 'X' &&numberedSquares[2].textContent  === 'X'){
-            console.log( 'it works');//why doesn't it work if i don't use textcontent???
-            player.textContent = 'PLAY AGAIN?' //prevents from adding another x or o but the console log is still countin whenever we click
-        } 
-        else if(numberedSquares[3].textContent  === 'X' && numberedSquares[4].textContent  === 'X' &&numberedSquares[5].textContent  === 'X'){
-            console.log( 'it works')
-            player.textContent = 'PLAY AGAIN?'
-        }
-        else if(numberedSquares[6].textContent  === 'X' && numberedSquares[7].textContent  === 'X' &&numberedSquares[8].textContent  === 'X'){
-            console.log( 'it works')
-            player.textContent = 'PLAY AGAIN?'
-        }
-        else if(numberedSquares[0].textContent  === 'X' && numberedSquares[3].textContent  === 'X' &&numberedSquares[6].textContent  === 'X'){
-            console.log( 'it works')
-            player.textContent = 'PLAY AGAIN?'
-        }
-        else if(numberedSquares[1].textContent  === 'X' && numberedSquares[4].textContent  === 'X' &&numberedSquares[7].textContent  === 'X'){
-            console.log( 'it works')
-            player.textContent = 'PLAY AGAIN?'
-        }
-        else if(numberedSquares[2].textContent  === 'X' && numberedSquares[5].textContent  === 'X' &&numberedSquares[8].textContent  === 'X'){
-            console.log( 'it works')
-            player.textContent = 'PLAY AGAIN?'
-        }
-        else if(numberedSquares[0].textContent  === 'X' && numberedSquares[4].textContent  === 'X' &&numberedSquares[8].textContent  === 'X'){
-            console.log( 'it works')
-            player.textContent = 'PLAY AGAIN?'
-        }
-        else if(numberedSquares[2].textContent  === 'X' && numberedSquares[4].textContent  === 'X' &&numberedSquares[6].textContent  === 'X'){
-            console.log( 'it works')
-            player.textContent = 'PLAY AGAIN?'
+        // if (numberedSquares[0].textContent  === 'X' && numberedSquares[1].textContent  === 'X' &&numberedSquares[2].textContent  === 'X'){
+        //     console.log( 'it works');//why doesn't it work if i don't use textcontent???
+        //     player.textContent = 'PLAY AGAIN?' //prevents from adding another x or o but the console log is still countin whenever we click
+        // } 
+        // else if(numberedSquares[3].textContent  === 'X' && numberedSquares[4].textContent  === 'X' &&numberedSquares[5].textContent  === 'X'){
+        //     console.log( 'it works')
+        //     player.textContent = 'PLAY AGAIN?'
+        // }
+        // else if(numberedSquares[6].textContent  === 'X' && numberedSquares[7].textContent  === 'X' &&numberedSquares[8].textContent  === 'X'){
+        //     console.log( 'it works')
+        //     player.textContent = 'PLAY AGAIN?'
+        // }
+        // else if(numberedSquares[0].textContent  === 'X' && numberedSquares[3].textContent  === 'X' &&numberedSquares[6].textContent  === 'X'){
+        //     console.log( 'it works')
+        //     player.textContent = 'PLAY AGAIN?'
+        // }
+        // else if(numberedSquares[1].textContent  === 'X' && numberedSquares[4].textContent  === 'X' &&numberedSquares[7].textContent  === 'X'){
+        //     console.log( 'it works')
+        //     player.textContent = 'PLAY AGAIN?'
+        // }
+        // else if(numberedSquares[2].textContent  === 'X' && numberedSquares[5].textContent  === 'X' &&numberedSquares[8].textContent  === 'X'){
+        //     console.log( 'it works')
+        //     player.textContent = 'PLAY AGAIN?'
+        // }
+        // else if(numberedSquares[0].textContent  === 'X' && numberedSquares[4].textContent  === 'X' &&numberedSquares[8].textContent  === 'X'){
+        //     console.log( 'it works')
+        //     player.textContent = 'PLAY AGAIN?'
+        // }
+        // else if(numberedSquares[2].textContent  === 'X' && numberedSquares[4].textContent  === 'X' &&numberedSquares[6].textContent  === 'X'){
+        //     console.log( 'it works')
+        //     player.textContent = 'PLAY AGAIN?'
         
-        }else if (numberedSquares[0].textContent  === 'O' && numberedSquares[1].textContent  === 'O' &&numberedSquares[2].textContent  === 'O'){
-            console.log( 'it works');//why doesn't it work if i don't use textcontent???
-            player.textContent = 'PLAY AGAIN?'
-        } 
-        else if(numberedSquares[3].textContent  === 'O' && numberedSquares[4].textContent  === 'O' &&numberedSquares[5].textContent  === 'O'){
-            console.log( 'it works')
-            player.textContent = 'PLAY AGAIN?'
-        }
-        else if(numberedSquares[6].textContent  === 'O' && numberedSquares[7].textContent  === 'O' &&numberedSquares[8].textContent  === 'O'){
-            console.log( 'it works')
-            player.textContent = 'PLAY AGAIN?'
-        }
-        else if(numberedSquares[0].textContent  === 'O' && numberedSquares[3].textContent  === 'O' &&numberedSquares[6].textContent  === 'O'){
-            console.log( 'it works')
-            player.textContent = 'PLAY AGAIN?'
-        }
-        else if(numberedSquares[1].textContent  === 'O' && numberedSquares[4].textContent  === 'O' &&numberedSquares[7].textContent  === 'O'){
-            console.log( 'it works')
-            player.textContent = 'PLAY AGAIN?'
-        }
-        else if(numberedSquares[2].textContent  === 'O' && numberedSquares[5].textContent  === 'O' &&numberedSquares[8].textContent  === 'O'){
-            console.log( 'it works')
-            player.textContent = 'PLAY AGAIN?'
-        }
-        else if(numberedSquares[0].textContent  === 'O' && numberedSquares[4].textContent  === 'O' &&numberedSquares[8].textContent  === 'O'){
-            console.log( 'it works')
-            player.textContent = 'PLAY AGAIN?'
-        }
-        else if(numberedSquares[2].textContent  === 'O' && numberedSquares[4].textContent  === 'O' &&numberedSquares[6].textContent  === 'O'){
-            console.log( 'it works')
-            player.textContent = 'PLAY AGAIN?'
-        }
-        else if ((numberedSquares.every((numberedSquares) => numberedSquares.textContent === 'X'||numberedSquares.textContent === 'O' ))){
-        console.log('draw');// why do i need a parameter
-        player.textContent = 'PLAY AGAIN?'
-        };
+        // }else if (numberedSquares[0].textContent  === 'O' && numberedSquares[1].textContent  === 'O' &&numberedSquares[2].textContent  === 'O'){
+        //     console.log( 'it works');//why doesn't it work if i don't use textcontent???
+        //     player.textContent = 'PLAY AGAIN?'
+        // } 
+        // else if(numberedSquares[3].textContent  === 'O' && numberedSquares[4].textContent  === 'O' &&numberedSquares[5].textContent  === 'O'){
+        //     console.log( 'it works')
+        //     player.textContent = 'PLAY AGAIN?'
+        // }
+        // else if(numberedSquares[6].textContent  === 'O' && numberedSquares[7].textContent  === 'O' &&numberedSquares[8].textContent  === 'O'){
+        //     console.log( 'it works')
+        //     player.textContent = 'PLAY AGAIN?'
+        // }
+        // else if(numberedSquares[0].textContent  === 'O' && numberedSquares[3].textContent  === 'O' &&numberedSquares[6].textContent  === 'O'){
+        //     console.log( 'it works')
+        //     player.textContent = 'PLAY AGAIN?'
+        // }
+        // else if(numberedSquares[1].textContent  === 'O' && numberedSquares[4].textContent  === 'O' &&numberedSquares[7].textContent  === 'O'){
+        //     console.log( 'it works')
+        //     player.textContent = 'PLAY AGAIN?'
+        // }
+        // else if(numberedSquares[2].textContent  === 'O' && numberedSquares[5].textContent  === 'O' &&numberedSquares[8].textContent  === 'O'){
+        //     console.log( 'it works')
+        //     player.textContent = 'PLAY AGAIN?'
+        // }
+        // else if(numberedSquares[0].textContent  === 'O' && numberedSquares[4].textContent  === 'O' &&numberedSquares[8].textContent  === 'O'){
+        //     console.log( 'it works')
+        //     player.textContent = 'PLAY AGAIN?'
+        // }
+        // else if(numberedSquares[2].textContent  === 'O' && numberedSquares[4].textContent  === 'O' &&numberedSquares[6].textContent  === 'O'){
+        //     console.log( 'it works')
+        //     player.textContent = 'PLAY AGAIN?'
+        // }
+        // else if ((numberedSquares.every((numberedSquares) => numberedSquares.textContent === 'X'||numberedSquares.textContent === 'O' ))){
+        // console.log('draw');// why do i need a parameter
+        // player.textContent = 'PLAY AGAIN?'
+        // };
 
 
         if(player.textContent === 'PLAY AGAIN?'){
