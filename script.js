@@ -41,7 +41,7 @@ for (let i = 0; i < squares.length; i++) {
             squares[i].textContent = 'O'; 
         };
         // if some of the elements in the player1score array matches with some of the elements in the winningcombination array, console.log player 1 wins
-         if(player1Score.some(() => winningCombination.every((winningCombination) => winningCombination[i]))){
+         if(player1Score.some(() => winningCombination.every((winningCombination) => winningCombination[i.indexOf(i)]))){
              console.log( 'it works')
              console.log(player1Score);
              console.log(winningCombination[i]);
