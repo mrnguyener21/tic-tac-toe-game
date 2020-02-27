@@ -1,142 +1,122 @@
 const ticTacToe = document.querySelector('.ticTactToe');
-const player = document.querySelector('#player');
+const heading = document.querySelector('#heading');
 const theSquares = document.querySelector('.theSquares');
 const squares = document.querySelectorAll('.square');
 
-const numberedSquares =[];
-///probably a better way to go about this then hardcoding everything
-// 0,1,2 
-const winningCombination = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+const numberedSquares = [];
+let activePlayer = 1;
 
-let player1Score = [];
-let player2Score = [];
+// create a variable that represnets victories of player 1
+// create a variable that represnets victories of player 2
+// on victory, increment the proper variable
+// create two more h2 tags below the heading
+// first one holds the value of victories of player 1
+// second one holds the value of victories of player 2
+// it should look like this 'score : score'
 
 for (let i = 0; i < squares.length; i++){
+    // CREATE AN ACTUAL MATRIX
     numberedSquares.push(squares[i]);
 } 
-//this will be for later when the pop up is created
+
 const reset = () => {
-    player.textContent = 'PLAY AGAIN?';
-    player.addEventListener('click', () => {
-        squares.textContent = '';
-        player.textContent = 'PLAYER ONE';
-    });
+    alert(`Player ${activePlayer} wins!`);
+
+    for (let i = 0; i < squares.length; i++) {
+        squares[i].textContent = '';
+    }
 };
-
-if(player.textContent === 'START GAME'){
-    player.addEventListener('click', () => player.textContent = 'PLAYER ONE');
-}
-
-
 
 for (let i = 0; i < squares.length; i++) {
-
-    squares[i].addEventListener('click',() => {
-        if (player.textContent === 'PLAYER ONE'){
+    squares[i].addEventListener('click', () => {
+        if (activePlayer === 1){
             squares[i].textContent = 'X';
-            player1Score.push(numberedSquares.indexOf(squares[i]));
-            player.textContent = 'PLAYER TWO';
-        } else if (player.textContent === 'PLAYER TWO'){
-            player.textContent = 'PLAYER ONE'
+            heading.textContent = 'PLAYER ONE';
+            activePlayer = 2;
+        } else if (activePlayer === 2){
             squares[i].textContent = 'O'; 
-        };
+            heading.textContent = 'PLAYER TWO';
+            activePlayer = 1;
+        };     
+    
+        //get pen and paper and figure out when it's going to be true
+        // IN HERE WE'RE CHECKING FOR ALL THE SOLUTIONS
+        // LOGIC IS COMPLEX, WE REALLY NEED TO FIRST, FIGURE IT OUT AND THEN IMPLEMENT IT
+        // PEN AND PAPER 
+        // REFERENCE THE INDEX.JS FILE
 
+        for (let i = 0; i < 3; i++) {
+            let number = 0;
 
-        // for some reason the below code doesnt work in the global scope;
-        //hardcoded the winning possibilities
-        if (numberedSquares[0].textContent  === 'X' && numberedSquares[1].textContent  === 'X' &&numberedSquares[2].textContent  === 'X'){
-            console.log( 'it works');//why doesn't it work if i don't use textcontent???
-            player.textContent = 'PLAY AGAIN?' //prevents from adding another x or o but the console log is still countin whenever we click
-        } 
-        else if(numberedSquares[3].textContent  === 'X' && numberedSquares[4].textContent  === 'X' &&numberedSquares[5].textContent  === 'X'){
-            console.log( 'it works')
-            player.textContent = 'PLAY AGAIN?'
-        }
-        else if(numberedSquares[6].textContent  === 'X' && numberedSquares[7].textContent  === 'X' &&numberedSquares[8].textContent  === 'X'){
-            console.log( 'it works')
-            player.textContent = 'PLAY AGAIN?'
-        }
-        else if(numberedSquares[0].textContent  === 'X' && numberedSquares[3].textContent  === 'X' &&numberedSquares[6].textContent  === 'X'){
-            console.log( 'it works')
-            player.textContent = 'PLAY AGAIN?'
-        }
-        else if(numberedSquares[1].textContent  === 'X' && numberedSquares[4].textContent  === 'X' &&numberedSquares[7].textContent  === 'X'){
-            console.log( 'it works')
-            player.textContent = 'PLAY AGAIN?'
-        }
-        else if(numberedSquares[2].textContent  === 'X' && numberedSquares[5].textContent  === 'X' &&numberedSquares[8].textContent  === 'X'){
-            console.log( 'it works')
-            player.textContent = 'PLAY AGAIN?'
-        }
-        else if(numberedSquares[0].textContent  === 'X' && numberedSquares[4].textContent  === 'X' &&numberedSquares[8].textContent  === 'X'){
-            console.log( 'it works')
-            player.textContent = 'PLAY AGAIN?'
-        }
-        else if(numberedSquares[2].textContent  === 'X' && numberedSquares[4].textContent  === 'X' &&numberedSquares[6].textContent  === 'X'){
-            console.log( 'it works')
-            player.textContent = 'PLAY AGAIN?'
-        
-        }else if (numberedSquares[0].textContent  === 'O' && numberedSquares[1].textContent  === 'O' &&numberedSquares[2].textContent  === 'O'){
-            console.log( 'it works');//why doesn't it work if i don't use textcontent???
-            player.textContent = 'PLAY AGAIN?'
-        } 
-        else if(numberedSquares[3].textContent  === 'O' && numberedSquares[4].textContent  === 'O' &&numberedSquares[5].textContent  === 'O'){
-            console.log( 'it works')
-            player.textContent = 'PLAY AGAIN?'
-        }
-        else if(numberedSquares[6].textContent  === 'O' && numberedSquares[7].textContent  === 'O' &&numberedSquares[8].textContent  === 'O'){
-            console.log( 'it works')
-            player.textContent = 'PLAY AGAIN?'
-        }
-        else if(numberedSquares[0].textContent  === 'O' && numberedSquares[3].textContent  === 'O' &&numberedSquares[6].textContent  === 'O'){
-            console.log( 'it works')
-            player.textContent = 'PLAY AGAIN?'
-        }
-        else if(numberedSquares[1].textContent  === 'O' && numberedSquares[4].textContent  === 'O' &&numberedSquares[7].textContent  === 'O'){
-            console.log( 'it works')
-            player.textContent = 'PLAY AGAIN?'
-        }
-        else if(numberedSquares[2].textContent  === 'O' && numberedSquares[5].textContent  === 'O' &&numberedSquares[8].textContent  === 'O'){
-            console.log( 'it works')
-            player.textContent = 'PLAY AGAIN?'
-        }
-        else if(numberedSquares[0].textContent  === 'O' && numberedSquares[4].textContent  === 'O' &&numberedSquares[8].textContent  === 'O'){
-            console.log( 'it works')
-            player.textContent = 'PLAY AGAIN?'
-        }
-        else if(numberedSquares[2].textContent  === 'O' && numberedSquares[4].textContent  === 'O' &&numberedSquares[6].textContent  === 'O'){
-            console.log( 'it works')
-            player.textContent = 'PLAY AGAIN?'
-        }
-        else if ((numberedSquares.every((numberedSquares) => numberedSquares.textContent === 'X'||numberedSquares.textContent === 'O' ))){
-        console.log('draw');// why do i need a parameter
-        player.textContent = 'PLAY AGAIN?'
-        };
+            for (let j = 0; j < 3; j++) {
 
+                console.log('test');
+                console.log(numberedSquares[i][j]);
+                console.log(numberedSquares[i][j] === 'X');
 
-        if(player.textContent === 'PLAY AGAIN?'){
-            player.addEventListener('click', () => {
-                numberedSquares.textContent = '';
-                squares.forEach ((numberedSquares) => numberedSquares.textContent = '')
-                player.textContent = 'PLAYER ONE';
-            });
+                number++;
+                // BOARD
+                // [0][0]x [0][1]x [0][2]x
+                // [1][0] [1][1] [1][2]
+                // [2][0] [2][1] [2][2]
+
+                if(numberedSquares[i][j] === 'X' && number == 2) {
+                    console.log('VICTORY');
+                }
+
+                // i 0 j = 0
+                // i 0 j = 1
+                // i 0 j = 2
+
+                // i 1 j = 0
+                // i 1 j = 1
+                // i 1 j = 2
+
+                // i 2 j = 0
+                // i 2 j = 1
+                // i 2 j = 2
+            }
         }
+
+        // if (numberedSquares[0].textContent  === 'X' && numberedSquares[1].textContent  === 'X' && numberedSquares[2].textContent  === 'X' ){
+        //     reset();
+        // }  else if(numberedSquares[3].textContent  === 'X' && numberedSquares[4].textContent  === 'X' &&numberedSquares[5].textContent  === 'X'){
+        //     reset();
+        // } else if(numberedSquares[6].textContent  === 'X' && numberedSquares[7].textContent  === 'X' &&numberedSquares[8].textContent  === 'X'){
+        //     reset();
+        // } else if(numberedSquares[0].textContent  === 'X' && numberedSquares[3].textContent  === 'X' &&numberedSquares[6].textContent  === 'X'){
+        //     reset();
+        // } else if(numberedSquares[1].textContent  === 'X' && numberedSquares[4].textContent  === 'X' &&numberedSquares[7].textContent  === 'X'){
+        //     reset();
+        // } else if(numberedSquares[2].textContent  === 'X' && numberedSquares[5].textContent  === 'X' &&numberedSquares[8].textContent  === 'X'){
+        //     reset();
+        // } else if(numberedSquares[0].textContent  === 'X' && numberedSquares[4].textContent  === 'X' &&numberedSquares[8].textContent  === 'X'){
+        //     reset();
+        // } else if(numberedSquares[2].textContent  === 'X' && numberedSquares[4].textContent  === 'X' &&numberedSquares[6].textContent  === 'X'){
+        //     reset();
+        // } else if (numberedSquares[0].textContent  === 'O' && numberedSquares[1].textContent  === 'O' &&numberedSquares[2].textContent  === 'O'){
+        //     reset();
+        // } else if(numberedSquares[3].textContent  === 'O' && numberedSquares[4].textContent  === 'O' &&numberedSquares[5].textContent  === 'O'){
+        //     reset();
+        // } else if(numberedSquares[6].textContent  === 'O' && numberedSquares[7].textContent  === 'O' &&numberedSquares[8].textContent  === 'O'){
+        //     reset();
+        // } else if(numberedSquares[0].textContent  === 'O' && numberedSquares[3].textContent  === 'O' &&numberedSquares[6].textContent  === 'O'){
+        //     reset();
+        // } else if(numberedSquares[1].textContent  === 'O' && numberedSquares[4].textContent  === 'O' &&numberedSquares[7].textContent  === 'O'){
+        //     reset();
+        // } else if(numberedSquares[2].textContent  === 'O' && numberedSquares[5].textContent  === 'O' &&numberedSquares[8].textContent  === 'O'){
+        //     reset();
+        // } else if(numberedSquares[0].textContent  === 'O' && numberedSquares[4].textContent  === 'O' &&numberedSquares[8].textContent  === 'O'){
+        //     reset();
+        // } else if(numberedSquares[2].textContent  === 'O' && numberedSquares[4].textContent  === 'O' &&numberedSquares[6].textContent  === 'O'){
+        //     reset();
+        // } else if ((numberedSquares.every((numberedSquares) => numberedSquares.textContent === 'X'||numberedSquares.textContent === 'O' ))){
+        //     console.log('DRAW');
+
+        //     reset();
+        // };
     });
 };
-
-// const array = [0,1,2];
-// const array2 = [[0,1,2],[,3,4,5]];
-// if (array.some(() => array2[1])){
-//     console.log('i understand the some method');
-// }
-
-// // if some of the elements in the player1score array matches with some of the elements in the winningcombination array, console.log player 1 wins
-// //if every element within index i of matches some elements of player 1 score console.log the winner
-// for (let i = 0; i < winningCombination.length; i++) {//why is it looping 5 times in the beginning despite player1score being blank
-//     if(winningCombination[i].every((player1Score) => player1Score.some))
-//     console.log( 'it works')
-// };
-
 
 
 

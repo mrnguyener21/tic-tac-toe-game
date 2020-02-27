@@ -5,12 +5,18 @@
 
 }
 
-#theButton{
+.buttonContainer {
    display: flex;
    align-items: center;
    justify-content: center;
 }
 
+.headingCountainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ 
 .theSquares{
     /*
     my design code
@@ -35,22 +41,18 @@
   color: #fff;
   border: 6px solid #2c3e50;
   border-radius: 10px;
-
-    
 }
+
 .square{
     /*
     my design code
-
     border: solid;
     border-width: 2px;
     border-color: darkblue;
     height: 200px;
     width: auto;
     background-color: cyan;
-
     */
-
     /*the design code i liked better, compare and learn*/
     border: 6px solid #2c3e50; /*he repeated this so this border and the border in .theSquares can blend in*/
     border-radius: 2px;
@@ -60,8 +62,4 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
-
-/* css for the popup new idea */
-/* stylize the button as well */
