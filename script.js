@@ -26,9 +26,9 @@ const reset = () => {
 player.addEventListener('click', () => player.textContent = 'PLAYER ONE');
 
 const array = [0,1,2];
-if (array.some(() => [0,4,1,5,2])){
-    console.log('i understand the some method');
-}
+// if (array.some(() => [0,4,1,5,2])){
+//     console.log('i understand the some method');
+// }
 for (let i = 0; i < squares.length; i++) {
 
     squares[i].addEventListener('click',() => {
@@ -42,7 +42,7 @@ for (let i = 0; i < squares.length; i++) {
             squares[i].textContent = 'O'; 
         };
         // if some of the elements in the player1score array matches with some of the elements in the winningcombination array, console.log player 1 wins
-         if(player1Score.some((winningCombination) => winningCombination[0])){
+         if(player1Score.some(() => winningCombination[0])){
              console.log( 'it works')
          };
 
