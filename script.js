@@ -9,6 +9,9 @@ let player1Score = 0;
 let player2Score = 0;
 
 const numberedSquares = [];
+//push i as an empty array
+//push j into the i numbereSqaures[i] array, 3x's for each
+//j should be the squares since they are numbered, probably use index of squares actually so we can push the number into the j array
 
 
 //TEMPORARY CODE UNTIL DETERMINING WINNER FUNCTION HAS BEEN COMPLETED. I put here befoe the score.textcontent so the score can update since javascript reads top down
@@ -29,15 +32,19 @@ score.textContent = `${player1Score}:${player2Score}`;
     // I actually ended up making the score with javascriiiipt....
 // it should look like this 'score : score' DONE
 
-for (let i = 0; i < squares.length; i++){
+for (let i = 0; i < 3; i++){
     // CREATE AN ACTUAL MATRIX
-    numberedSquares.push(squares[i]);
+    let row = [];
+    numberedSquares.push(row);
 
     for (let j = 0; j <3; j++){
-    numberedSquares[i].push[j];
+    numberedSquares[i].push[squares[j]];
     };
 } ;
 
+console.log(numberedSquares)
+console.log(squares)
+// console.log(numberedSquares[i][j]);
 const reset = () => {
     alert(`Player ${activePlayer} wins!`);
 

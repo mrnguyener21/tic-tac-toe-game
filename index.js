@@ -7,7 +7,7 @@
 // [1][0] [1][1] [1][2]
 // [2][0] [2][1] [2][2]
 
-// https://stackoverflow.com/questions/966225/how-can-i-create-a-two-dimensional-array-in-javascript
+https://stackoverflow.com/questions/966225/how-can-i-create-a-two-dimensional-array-in-javascript
 
 // const board = [];
 
