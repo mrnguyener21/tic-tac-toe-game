@@ -7,17 +7,10 @@ const score = document.querySelector('.score');
 let activePlayer = 1;
 let player1Score = 0;
 let player2Score = 0;
+
 const numberedSquares = [];
-const winningCombination = [
-    [0,1,2],
-    [3,4,5],
-    [6,7,8],
-    [0,3,6],
-    [1,4,7],
-    [2,5,8],
-    [0,4,8],
-    [2,4,6]
-];
+
+
 //TEMPORARY CODE UNTIL DETERMINING WINNER FUNCTION HAS BEEN COMPLETED. I put here befoe the score.textcontent so the score can update since javascript reads top down
 // (if player1 === 'VICTORY'){
 //     ++player1Score;
@@ -39,7 +32,11 @@ score.textContent = `${player1Score}:${player2Score}`;
 for (let i = 0; i < squares.length; i++){
     // CREATE AN ACTUAL MATRIX
     numberedSquares.push(squares[i]);
-} 
+
+    for (let j = 0; j <3; j++){
+    numberedSquares[i].push[j];
+    };
+} ;
 
 const reset = () => {
     alert(`Player ${activePlayer} wins!`);
@@ -67,10 +64,10 @@ for (let i = 0; i < squares.length; i++) {
         // PEN AND PAPER 
         // REFERENCE THE INDEX.JS FILE
 
-        for (let i = 0; i < winningCombination.length; i++) {
+        for (let i = 0; i < 3; i++) {
             let number = 0;
 
-            for (let j = 0; j < winningCombination[i].length; j++) {
+            for (let j = 0; j < 3; j++) {
                 //this nested loop will make the i array go through each iteration within the j array before moving onto the next iteration within the i array. 
                 // so i = 0 will go through [0][0], [0][1] and [0][2] before going onto it's second iteration with this current nested loop
                 // console.log('test');
@@ -84,7 +81,7 @@ for (let i = 0; i < squares.length; i++) {
                 // [2][0] [2][1] [2][2]
 
                 if(numberedSquares[i][j] === 'X' && number == 2) {
-                    console.log('VICTORY');
+                    // console.log('VICTORY');
                 }
 
                 // i 0 j = 0
