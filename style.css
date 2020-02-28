@@ -15,8 +15,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
- 
+
+ .score {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-direction: row;
+    font-size: 75px;
+    height: auto;
+    width: auto;
+
+ }
+
 .theSquares{
     /*
     my design code
