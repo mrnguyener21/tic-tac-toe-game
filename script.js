@@ -2,10 +2,14 @@ const ticTacToe = document.querySelector('.ticTactToe');
 const heading = document.querySelector('#heading');
 const theSquares = document.querySelector('.theSquares');
 const squares = document.querySelectorAll('.square');
-const playerOneScore = document.querySelector('#playerOneScore');
-const playerTwoScore = document.querySelector('#playerTwoSCore')
+// const playerOneScore = document.querySelector('#playerOneScore');
+// const playerTwoScore = document.querySelector('#playerTwoSCore')
+const score = document.querySelector('.score');
 const numberedSquares = [];
 let activePlayer = 1;
+let player1Score = 1;
+let player2SCore = 0;
+score.textContent = `${player1Score}:${player2SCore}`;
 
 // create a variable that represnets victories of player 1
 // create a variable that represnets victories of player 2
