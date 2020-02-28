@@ -2,7 +2,8 @@ const ticTacToe = document.querySelector('.ticTactToe');
 const heading = document.querySelector('#heading');
 const theSquares = document.querySelector('.theSquares');
 const squares = document.querySelectorAll('.square');
-
+const playerOneScore = document.querySelector('#playerOneScore');
+const playerTwoScore = document.querySelector('#playerTwoSCore')
 const numberedSquares = [];
 let activePlayer = 1;
 
@@ -26,6 +27,8 @@ const reset = () => {
         squares[i].textContent = '';
     }
 };
+
+//make a function to add 1 to the correct player's score. Let's just make it in the global scope and then call it to the appropriate  scope later
 
 for (let i = 0; i < squares.length; i++) {
     squares[i].addEventListener('click', () => {
@@ -78,6 +81,7 @@ for (let i = 0; i < squares.length; i++) {
             }
         }
 
+    
         // if (numberedSquares[0].textContent  === 'X' && numberedSquares[1].textContent  === 'X' && numberedSquares[2].textContent  === 'X' ){
         //     reset();
         // }  else if(numberedSquares[3].textContent  === 'X' && numberedSquares[4].textContent  === 'X' &&numberedSquares[5].textContent  === 'X'){
