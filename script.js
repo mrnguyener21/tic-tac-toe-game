@@ -2,22 +2,39 @@ const ticTacToe = document.querySelector('.ticTactToe');
 const heading = document.querySelector('#heading');
 const theSquares = document.querySelector('.theSquares');
 const squares = document.querySelectorAll('.square');
-// const playerOneScore = document.querySelector('#playerOneScore');
-// const playerTwoScore = document.querySelector('#playerTwoSCore')
 const score = document.querySelector('.score');
-const numberedSquares = [];
-let activePlayer = 1;
-let player1Score = 1;
-let player2SCore = 0;
-score.textContent = `${player1Score}:${player2SCore}`;
 
-// create a variable that represnets victories of player 1
-// create a variable that represnets victories of player 2
-// on victory, increment the proper variable
+let activePlayer = 1;
+let player1Score = 0;
+let player2Score = 0;
+const numberedSquares = [];
+const winningCombination = [
+    [0,1,2],
+    [3,4,5],
+    [6,7,8],
+    [0,3,6],
+    [1,4,7],
+    [2,5,8],
+    [0,4,8],
+    [2,4,6]
+];
+//TEMPORARY CODE UNTIL DETERMINING WINNER FUNCTION HAS BEEN COMPLETED. I put here befoe the score.textcontent so the score can update since javascript reads top down
+// (if player1 === 'VICTORY'){
+//     ++player1Score;
+// }else if( player2 === 'VICTORY'){
+//     ++player2Score;
+// };
+
+score.textContent = `${player1Score}:${player2Score}`;
+
+// create a variable that represnets victories of player 1 DONE
+// create a variable that represnets victories of player 2 DONE
+// on victory, increment the proper variable DONE-ISH
 // create two more h2 tags below the heading
-// first one holds the value of victories of player 1
-// second one holds the value of victories of player 2
-// it should look like this 'score : score'
+// first one holds the value of victories of player 1 DONE?
+// second one holds the value of victories of player 2 DONE?
+    // I actually ended up making the score with javascriiiipt....
+// it should look like this 'score : score' DONE
 
 for (let i = 0; i < squares.length; i++){
     // CREATE AN ACTUAL MATRIX
@@ -31,8 +48,6 @@ const reset = () => {
         squares[i].textContent = '';
     }
 };
-
-//make a function to add 1 to the correct player's score. Let's just make it in the global scope and then call it to the appropriate  scope later
 
 for (let i = 0; i < squares.length; i++) {
     squares[i].addEventListener('click', () => {
@@ -52,14 +67,15 @@ for (let i = 0; i < squares.length; i++) {
         // PEN AND PAPER 
         // REFERENCE THE INDEX.JS FILE
 
-        for (let i = 0; i < 3; i++) {
+        for (let i = 0; i < winningCombination.length; i++) {
             let number = 0;
 
-            for (let j = 0; j < 3; j++) {
-
-                console.log('test');
-                console.log(numberedSquares[i][j]);
-                console.log(numberedSquares[i][j] === 'X');
+            for (let j = 0; j < winningCombination[i].length; j++) {
+                //this nested loop will make the i array go through each iteration within the j array before moving onto the next iteration within the i array. 
+                // so i = 0 will go through [0][0], [0][1] and [0][2] before going onto it's second iteration with this current nested loop
+                // console.log('test');
+                // console.log(numberedSquares[i][j]);
+                // console.log(numberedSquares[i][j] === 'X');
 
                 number++;
                 // BOARD
