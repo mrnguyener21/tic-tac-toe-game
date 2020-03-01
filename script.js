@@ -27,7 +27,7 @@ const reset = () => {
     }
     winner = null;
 }; 
-console.log(squares)
+
 
 const getWinner = () => {
    
@@ -55,35 +55,35 @@ const getWinner = () => {
         console.log('DRAW');
         reset();
     }
-    
 
-
-
-    // reset if there's a draw
-    //find a way to change the winner variable into X, O, or T(for tie)
-    // reset winner variable afterwards
-    // have alert display correct winner
-    // finish creating the counter function DONE
 }
 
 for (let i = 0; i < squares.length; i++) {
     squares[i].addEventListener('click', () => {
         if (activePlayer === 1){
-            squares[i].textContent = 'X';
+            if(squares[i].textContent !== 'O'){
+                squares[i].textContent = 'X';
+            };
             heading.textContent = 'PLAYER ONE';
             activePlayer = 2;
         } else if (activePlayer === 2){
-            squares[i].textContent = 'O'; 
+            if(squares[i].textContent !== 'X'){
+                squares[i].textContent = 'O';
+            };
             heading.textContent = 'PLAYER TWO';
             activePlayer = 1;
-        };     
+        };
         console.log(winner)
 
         getWinner();
     });
 };
-
-
+//TO DO
+    // reset if there's a draw DONE
+    //find a way to change the winner variable into X, O, or T(for tie) DONE
+    // reset winner variable afterwards DONE
+    // have alert display correct winner
+    // finish creating the counter function DONE
 
 
 
