@@ -4,7 +4,16 @@ const theSquares = document.querySelector('.theSquares');
 const squares = document.querySelectorAll('.square');
 const score = document.querySelector('.score');
 
-const winningCombinations = [ [ 0, 1, 2 ], [ 3, 4, 5 ], [ 6, 7, 8 ], [ 0, 3, 6 ], [ 1, 4, 7 ], [ 2, 5, 8 ], [ 0, 4, 8 ],[ 2, 4, 6 ] ];
+const winningCombinations = [ 
+[ 0, 1, 2 ], 
+[ 3, 4, 5 ], 
+[ 6, 7, 8 ], 
+[ 0, 3, 6 ], 
+[ 1, 4, 7 ], 
+[ 2, 5, 8 ], 
+[ 0, 4, 8 ],
+[ 2, 4, 6 ] 
+];
 const board = [];
 
 for (let i = 0; i < squares.length; i++){
@@ -32,8 +41,15 @@ const reset = () => {
 const getWinner = () => {
    
     winningCombinations.forEach((winningCombination) => {
-        if (squares[winningCombination[0]].textContent && squares[winningCombination[0]].textContent === squares[winningCombination[1]].textContent &&squares[winningCombination[0]].textContent === squares[winningCombination[2]].textContent) {
+        if (
+            squares[winningCombination[0]].textContent && 
+            squares[winningCombination[0]].textContent === squares[winningCombination[1]].textContent &&
+            squares[winningCombination[0]].textContent === squares[winningCombination[2]].textContent
+            ) {
             winner = squares[winningCombination[0]].textContent;
+            console.log(squares[winningCombination[0]].textContent)
+            console.log(squares[winningCombination[1]].textContent)
+            console.log(squares[winningCombination[2]].textContent)
         }
         else if( board.every( (board) => (board.textContent === "X" || board.textContent === "O"))){
             //how to bring back the logic of having a baord variable with an empty array and pushing square[i] into it, but why does it say squares is not a function when i tried using squares. when i compare them via console log the proto for board is array which is why the every method works since its an array method but squares is considered a node list, why?
@@ -41,6 +57,13 @@ const getWinner = () => {
          
         };
     });
+
+    //if a winner is determined or a draw is determined, change heading to 'PLAY AGAIN?
+    //change active player to 3
+    // add an event listener to where if heading is play again then click to reset the board 
+    // if player 1 won, make active player 2
+    //if player 2 won, make active player 1
+
     if(winner === 'X') {
         ++player1Score;
         console.log('Player 1 Wins')
@@ -78,12 +101,7 @@ for (let i = 0; i < squares.length; i++) {
         getWinner();
     });
 };
-//TO DO
-    // reset if there's a draw DONE
-    //find a way to change the winner variable into X, O, or T(for tie) DONE
-    // reset winner variable afterwards DONE
-    // have alert display correct winner
-    // finish creating the counter function DONE
+
 
 
 
