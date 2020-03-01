@@ -34,7 +34,6 @@ const reset = () => {
     for(let i = 0; i < 9; i++){
         squares[i].textContent = '';
     }
-    winner = null;
 }; 
 
 
@@ -67,22 +66,20 @@ const getWinner = () => {
         ++player1Score;
         alert('PLAYER 1 WINS');
         heading.textContent = "PLAY AGAIN?";
-        winner = null;
+
         activePlayer = 0;
         updatingTheScore();// why did i have to call it as a function for the counter to update despite the player score updating?
      
     } else if(winner === 'O' && heading.textContent !== 'PLAY AGAIN?') {
         ++player2Score;
         heading.textContent = "PLAY AGAIN?";
-        winner = null;
-        activePlayer = 0;
         alert('PLAYER 2 WINS');
         updatingTheScore();
       
     } else if( winner === 'T' && heading.textContent !== 'PLAY AGAIN?'){ 
         alert('DRAW');
         heading.textContent = "PLAY AGAIN?";
-        winner = null;
+
        
     }
 
@@ -92,6 +89,20 @@ heading.addEventListener('click', () => {
     if (heading.textContent === 'PLAY AGAIN?'){
         reset();
     };
+
+    if( winner === 'X'){
+        winner = null;
+        activePlayer = 2;
+        console.log(activePlayer);
+        heading.textContent = 'MAKE A MOVE';
+    } else if (winner === 'O'){
+        winner = null;
+        activePlayer = 1;
+    } else if (winner === 'T'){
+
+
+    }        
+
 });
 
 
