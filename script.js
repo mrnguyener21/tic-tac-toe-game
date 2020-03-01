@@ -60,20 +60,30 @@ const getWinner = () => {
     // add an event listener to where if heading is play again then click to reset the board 
     // if player 1 won, make active player 2
     //if player 2 won, make active player 1
+    //start researching how to do a pop upscreen?
+    //maybe have the computer play with you?
 
-    if(winner === 'X') {
+    if(winner === 'X' && heading.textContent !== 'PLAY AGAIN?') {
         ++player1Score;
         alert('PLAYER 1 WINS');
+        heading.textContent = "PLAY AGAIN?";
+        winner = null;
+        activePlayer = 0;
         updatingTheScore();// why did i have to call it as a function for the counter to update despite the player score updating?
-        reset();
-    } else if(winner === 'O') {
+     
+    } else if(winner === 'O' && heading.textContent !== 'PLAY AGAIN?') {
         ++player2Score;
+        heading.textContent = "PLAY AGAIN?";
+        winner = null;
+        activePlayer = 0;
         alert('PLAYER 2 WINS');
         updatingTheScore();
-        reset();
-    } else if( winner === 'T'){ 
+      
+    } else if( winner === 'T' && heading.textContent !== 'PLAY AGAIN?'){ 
         alert('DRAW');
-        reset();
+        heading.textContent = "PLAY AGAIN?";
+        winner = null;
+       
     }
 
 }
