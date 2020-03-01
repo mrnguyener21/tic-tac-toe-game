@@ -86,7 +86,14 @@ const getWinner = () => {
        
     }
 
-}
+};
+
+heading.addEventListener('click', () => {
+    if (heading.textContent === 'PLAY AGAIN?'){
+        reset();
+    };
+});
+
 
 for (let i = 0; i < squares.length; i++) {
     squares[i].addEventListener('click', () => {
@@ -106,6 +113,7 @@ for (let i = 0; i < squares.length; i++) {
         getWinner();
     });
 };
+
 
 
 
