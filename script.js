@@ -15,7 +15,7 @@ score.textContent = `${player1Score}:${player2Score}`;
 const getWinner = () => {
     let winner = null;
     
-    winningCombinations.forEach((winningCombination, index) => {
+    winningCombinations.forEach((winningCombination) => {
         if (squares[winningCombination[0]].textContent && squares[winningCombination[0]].textContent === squares[winningCombination[1]].textContent && squares[winningCombination[0]].textContent === squares[winningCombination[2]].textContent) {
             winner = squares[winningCombination[0]].textContent;
         };
@@ -30,6 +30,8 @@ const getWinner = () => {
     } 
 
     // reset if there's a draw
+    // have alert display correct winner
+    // finish creating the counter function
 }
 
 const reset = () => {
