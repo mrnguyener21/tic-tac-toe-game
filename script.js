@@ -47,9 +47,6 @@ const getWinner = () => {
             squares[winningCombination[0]].textContent === squares[winningCombination[2]].textContent
             ) {
             winner = squares[winningCombination[0]].textContent;
-            console.log(squares[winningCombination[0]].textContent)
-            console.log(squares[winningCombination[1]].textContent)
-            console.log(squares[winningCombination[2]].textContent)
         }
         else if( board.every( (board) => (board.textContent === "X" || board.textContent === "O"))){
             //how to bring back the logic of having a baord variable with an empty array and pushing square[i] into it, but why does it say squares is not a function when i tried using squares. when i compare them via console log the proto for board is array which is why the every method works since its an array method but squares is considered a node list, why?
@@ -59,23 +56,23 @@ const getWinner = () => {
     });
 
     //if a winner is determined or a draw is determined, change heading to 'PLAY AGAIN?
-    //change active player to 3
+    //change active player to null
     // add an event listener to where if heading is play again then click to reset the board 
     // if player 1 won, make active player 2
     //if player 2 won, make active player 1
 
     if(winner === 'X') {
         ++player1Score;
-        console.log('Player 1 Wins')
+        alert('PLAYER 1 WINS');
         updatingTheScore();// why did i have to call it as a function for the counter to update despite the player score updating?
         reset();
     } else if(winner === 'O') {
         ++player2Score;
+        alert('PLAYER 2 WINS');
         updatingTheScore();
         reset();
-        console.log('Player 2 Wins')
     } else if( winner === 'T'){ 
-        console.log('DRAW');
+        alert('DRAW');
         reset();
     }
 
@@ -96,8 +93,6 @@ for (let i = 0; i < squares.length; i++) {
             heading.textContent = 'PLAYER TWO';
             activePlayer = 1;
         };
-        console.log(winner)
-
         getWinner();
     });
 };
