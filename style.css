@@ -89,3 +89,12 @@
     align-items: center;
     background-color: rgba(0, 0,0,.5);
 }
+.popUpWindow {
+    background-color: white;
+    padding: 10%;
+    width: 50%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
