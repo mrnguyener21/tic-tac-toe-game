@@ -41,6 +41,19 @@ https://stackoverflow.com/questions/966225/how-can-i-create-a-two-dimensional-ar
 // closure
 
 // coercion - change of type
-
-undefined + undefined = NaN;
 console.log(2 + '2'); 
+console.log(true + false) 
+console.log(12 / "6")
+"number" + 15 + 3
+15 + 3 + "number"
+[1] > null
+"foo" + + "bar"
+'true' == true
+false == 'false'
+null == ''
+!!"false" == !!"true"
+[ëxí] == ëxí
+[] + null + 1
+[1,2,3] == [1,2,3]
+{}+[]+{}+[1]
+!+[]+[]+![]

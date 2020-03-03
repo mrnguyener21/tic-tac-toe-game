@@ -42,6 +42,7 @@ const getWinner = () => {
         updatingTheScore();// why did i have to call it as a function for the counter to update despite the player score updating?
     } else if(winner === 'O' && heading.textContent !== "PLAY AGAIN?") {
         heading.textContent = "PLAY AGAIN?";
+        ++player2Score;
         alert('PLAYER 2 WINS');
         updatingTheScore();
     } else if( winner === 'D' && heading.textContent !== 'PLAY AGAIN?'){ 
