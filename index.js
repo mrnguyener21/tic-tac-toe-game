@@ -29,3 +29,27 @@ https://stackoverflow.com/questions/966225/how-can-i-create-a-two-dimensional-ar
 //     [ 0, 4, 8 ],
 //     [ 2, 4, 6 ] 
 // ];
+
+// BUG WHERE IT DRAWS if all fields are filled
+
+// IIFE - a self calling function
+// default parameters
+
+// tricky concepts
+// scope 
+
+// Global Scope
+
+const someFunction = (() => {
+    // Local Scope #1
+    let a = 'hello';
+    console.log(a);
+    const anotherFunction = () => {
+        // Local Scope #2
+        let b = 'bye';
+        console.log(b);
+        console.log(a);
+    }
+
+    anotherFunction();
+})()
