@@ -40,16 +40,8 @@ https://stackoverflow.com/questions/966225/how-can-i-create-a-two-dimensional-ar
 
 // Global Scope
 
-const someFunction = (() => {
-    // Local Scope #1
-    let a = 'hello';
-    console.log(a);
-    const anotherFunction = () => {
-        // Local Scope #2
-        let b = 'bye';
-        console.log(b);
-        console.log(a);
-    }
+var hoist;
 
-    anotherFunction();
-})()
+console.log(hoist); 
+
+hoist = 'The variable has been hoisted.'
