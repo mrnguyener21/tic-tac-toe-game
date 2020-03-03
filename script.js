@@ -25,13 +25,14 @@ const reset = () => {
 }; 
 
 const getWinner = () => {
-    const determiningTheWinner = winningCombinations.forEach((winningCombination) => {
+    winningCombinations.forEach((winningCombination) => {
         if (squares[winningCombination[0]].textContent && squares[winningCombination[0]].textContent === squares[winningCombination[1]].textContent &&squares[winningCombination[0]].textContent === squares[winningCombination[2]].textContent) {
             winner = squares[winningCombination[0]].textContent;
         }
     });
 
-    if( board.every( (board) => (board.textContent === "X" || board.textContent === "O") && board !== determiningTheWinner)){
+    if( board.every( (board) => (board.textContent === "X" || board.textContent === "O" & winner !== 'X' || winner !== 'O'))){
+        console.log(winner);
         winner = 'D';
     };
 
