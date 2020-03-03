@@ -29,7 +29,7 @@ const getWinner = () => {
         if (squares[winningCombination[0]].textContent && squares[winningCombination[0]].textContent === squares[winningCombination[1]].textContent &&squares[winningCombination[0]].textContent === squares[winningCombination[2]].textContent) {
             winner = squares[winningCombination[0]].textContent;
         }
-        else if( board.every( (board) => (board.textContent === "X" || board.textContent === "O"))){
+        else if( squares[winningCombination[0]].textContent && squares[winningCombination[0]].textContent !== squares[winningCombination[1]].textContent &&squares[winningCombination[0]].textContent !== squares[winningCombination[2]].textContent && board.every( (board) => (board.textContent === "X" || board.textContent === "O"))){
             //had to bring back the logic of having a baord variable with an empty array and pushing square[i] into it, but why does it say squares is not a function when i tried using squares. when i compare them via console log the proto for board is array which is why the every method works since its an array method but squares is considered a node list, why?
             winner = 'D';
         };
