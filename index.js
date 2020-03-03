@@ -40,8 +40,24 @@ https://stackoverflow.com/questions/966225/how-can-i-create-a-two-dimensional-ar
 
 // Global Scope
 
-var hoist;
+// CLOSURE
 
-console.log(hoist); 
+// Closure: Normally, when you exit a function, all its variables “disappear”.
+// This is because nothing needs them anymore. But what if you declare a function inside a function?
+// Then the inner function could still be called later, and read the variables of the outer function.
+// In practice, this is very useful! But for this to work, the outer function’s variables need to “stick around” somewhere.
+// So in this case, JavaScript takes care of “keeping the variables alive” instead of “forgetting” them as it would usually do.
+// This is called a “closure”. While closures are often considered a misunderstood JavaScript aspect,
+// you probably use them many times a day without realizing it!
 
-hoist = 'The variable has been hoisted.'
+function init() {
+    var name = 'Mozilla'; // name is a local variable created by init
+  
+    function displayName() { // displayName() is the inner function, a closure
+      alert(name); // use variable declared in the parent function
+    }
+  
+    displayName();
+}
+  
+init();
