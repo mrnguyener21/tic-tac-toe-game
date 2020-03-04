@@ -30,7 +30,7 @@ const getWinner = () => {
             winner = squares[winningCombination[0]].textContent;
         }
     });
-     board.every((board) => board.textContent === "X" || board.textContent === "O") && winner === "X" || 'O' ? null : winner = 'D';
+     board.every((board) => board.textContent === "X" || board.textContent === "O") && winner !== "X" || 'O' ? null : winner = 'D';
 
     // if( board.every( (board) => (board.textContent === "X" || board.textContent === "O" & winner !== 'X' || winner !== 'O'))){
     //     console.log(board)
