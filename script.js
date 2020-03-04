@@ -28,10 +28,15 @@ const getWinner = () => {
     winningCombinations.forEach((winningCombination) => {
         if (squares[winningCombination[0]].textContent && squares[winningCombination[0]].textContent === squares[winningCombination[1]].textContent &&squares[winningCombination[0]].textContent === squares[winningCombination[2]].textContent) {
             winner = squares[winningCombination[0]].textContent;
+   
+            // squares[winningCombination[0]].textContent === "X" || squares[winningCombination[0]].textContent === 'O' && winner === null? winner ="D" && console.log('d works'): winner = null && console.log('null works');
         }
+        // board.every((board) => board.textContent === "X" || board.textContent === "O") && winner !== "X" || 'O' ? null && console.log('null works') : winner = 'D' && console.log();
+        // return winner ? winner : board.includes('') ? null : 'D';
+        winner === "X"||'O' && squares[winningCombination[0]].textContent === "X"||'O'? winner && console.log('winner works') : winner = "D"&& console.log('D works');
     });
-     board.every((board) => board.textContent === "X" || board.textContent === "O") && winner !== "X" || 'O' ? null : winner = 'D';
-
+     
+        
     // if( board.every( (board) => (board.textContent === "X" || board.textContent === "O" & winner !== 'X' || winner !== 'O'))){
     //     console.log(board)
 
