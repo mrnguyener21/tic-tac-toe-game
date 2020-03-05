@@ -34,7 +34,7 @@ const getWinner = () => {
         // board.every((board) => board.textContent === "X" || board.textContent === "O") && winner !== "X" || 'O' ? null && console.log('null works') : winner = 'D' && console.log();
         // return winner ? winner : board.includes('') ? null : 'D';
         //conditions: winner doesn't eequal x or o; all squares have a x or o in them -> draw
-        winner !== "X"||'O' && squares[winningCombination[0]].textContent === "X"||'O'? winner && console.log('winner works') : winner = "D"&& console.log('D works');
+        squares[winningCombination[0]].textContent === "X"||'O'&& winner !== 'X' || winner !== 'O' ? winner && console.log('winner works') : winner = "D"&& console.log('D works');
     });
      
         
