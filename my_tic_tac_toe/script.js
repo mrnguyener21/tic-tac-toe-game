@@ -1,21 +1,11 @@
-// ---- DOM---
 const ticTacToe = document.querySelector('.ticTactToe');
 const heading = document.querySelector('#heading');
 const theSquares = document.querySelector('.theSquares');
-const squares = Array.from(document.querySelectorAll('.square'));
+const squares = document.querySelectorAll('.square');
 const score = document.querySelector('.score');
 
-
-const winningCombinations = [ [ 0, 1, 2 ], 
-[ 3, 4, 5 ], 
-[ 6, 7, 8 ], 
-[ 0, 3, 6 ], 
-[ 1, 4, 7 ], 
-[ 2, 5, 8 ], 
-[ 0, 4, 8 ],
-[ 2, 4, 6 ] ];
+const winningCombinations = [ [ 0, 1, 2 ], [ 3, 4, 5 ], [ 6, 7, 8 ], [ 0, 3, 6 ], [ 1, 4, 7 ], [ 2, 5, 8 ], [ 0, 4, 8 ],[ 2, 4, 6 ] ];
 const board = [];
-
 
 // for (let i = 0; i < squares.length; i++){
 //     board.push(squares[i]);
@@ -31,23 +21,24 @@ updatingTheScore();
 const reset = () => {
     for(let i = 0; i < 9; i++){
         squares[i].textContent = '';
-        amountOfOOnTheBoard.length = 0;
-        amountOfXOnTheBoard.length = 0;
+        board.length = 0;
     }
 }; 
-
 
 const getWinner = () => {
     winningCombinations.forEach((winningCombination) => {
         if (squares[winningCombination[0]].textContent && squares[winningCombination[0]].textContent === squares[winningCombination[1]].textContent &&squares[winningCombination[0]].textContent === squares[winningCombination[2]].textContent) {
             winner = squares[winningCombination[0]].textContent;
-            
-            // squares[winningCombination[0]].textContent === "X" || squares[winningCombination[0]].textContent === 'O' && winner === null? winner ="D" && console.log('d works'): winner = null && console.log('null works');
-        }else if (amountOfXOnTheBoard.length + amountOfOOnTheBoard.length === 9 && winner !== squares[winningCombination[0]].textContent){
+  
+        }else if(board.length === 9 && winner === null){
             winner = 'D';
+            console.log('D WORKS');
         }
+        
 
     });
+     
+
     if(winner === 'X' && heading.textContent !== "PLAY AGAIN?") {
         ++player1Score;
         alert('PLAYER 1 WINS');
@@ -62,8 +53,6 @@ const getWinner = () => {
         alert('DRAW');
         heading.textContent = "PLAY AGAIN?";
     }
- 
-
 };
 
 heading.addEventListener('click', () => {
@@ -92,27 +81,24 @@ for (let i = 0; i < squares.length; i++) {
             if(squares[i].textContent !== 'O'){
                 squares[i].textContent = 'X';   
             };
+
             heading.textContent = 'PLAYER ONE';
             activePlayer = 2;
-
+            board.push(squares[i]);
+            console.log(board);
+            console.log(board.length);
         } else if (activePlayer === 2 && heading.textContent !== "PLAY AGAIN?"){
 
             if(squares[i].textContent !== 'X'){
                 squares[i].textContent = 'O';
             };
+            
             heading.textContent = 'PLAYER TWO';
             activePlayer = 1;
+            board.push(squares[i]);
+            console.log(board);
+            console.log(board.length);
         };
         getWinner();
     });
 };
-
-
-
-
-
-
-
-
-
-
