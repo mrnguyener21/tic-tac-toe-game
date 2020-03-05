@@ -1,0 +1,56 @@
+body {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    
+h2 {
+    margin: 0 auto;
+    font-size: 35px;
+    margin: 10px;
+}
+    
+    
+.flex-container {
+    /* In order to use flex-box we need to first set our display property */
+    display: flex;
+    /* center the container horizontally */
+    justify-content: center;
+    /* this will center content vertically */
+    align-items: center;
+    /* tells the container to align the children in columns rather than rows */
+}
+
+.flex-column {
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    /* tells the container to drop down once it reaches max-width */
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+    height: 432px;
+    width: 432px;
+}
+    
+    
+.square {
+    border: 2px solid rgba(0, 0, 0, .75);
+    height: 140px;
+    width: 140px;
+    font-size: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+    
+    
+#reset-button {
+    text-align: center;
+    font-size: 20px;
+    border: 1px solid black;
+    height: 55px;
+    width: 100px;
+    margin: 10px;
+}
