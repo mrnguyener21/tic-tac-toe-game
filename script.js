@@ -1,13 +1,14 @@
 const ticTacToe = document.querySelector('.ticTactToe');
 const heading = document.querySelector('#heading');
 const theSquares = document.querySelector('.theSquares');
-const squares = document.querySelectorAll('.square');
+const squares = Array.from(document.querySelectorAll('.square'));
 const score = document.querySelector('.score');
+
 
 const winningCombinations = [ [ 0, 1, 2 ], [ 3, 4, 5 ], [ 6, 7, 8 ], [ 0, 3, 6 ], [ 1, 4, 7 ], [ 2, 5, 8 ], [ 0, 4, 8 ],[ 2, 4, 6 ] ];
 const board = [];
-const amountOfXOnTheBoard = [];
-const amountOfOOnTheBoard = [];
+mountOfXOnTheBoard = [];
+const amountOfOOnTheBoaconst ard = [];
 
 for (let i = 0; i < squares.length; i++){
     board.push(squares[i]);
@@ -29,43 +30,64 @@ const reset = () => {
 }; 
 
 const getWinner = () => {
-    winningCombinations.forEach((winningCombination) => {
-        if (squares[winningCombination[0]].textContent && squares[winningCombination[0]].textContent === squares[winningCombination[1]].textContent &&squares[winningCombination[0]].textContent === squares[winningCombination[2]].textContent) {
-            winner = squares[winningCombination[0]].textContent;
-            
-            // squares[winningCombination[0]].textContent === "X" || squares[winningCombination[0]].textContent === 'O' && winner === null? winner ="D" && console.log('d works'): winner = null && console.log('null works');
-        }else if (amountOfXOnTheBoard.length + amountOfOOnTheBoard.length === 9 && winner !== squares[winningCombination[0]].textContent){
-            winner = 'D';
+    let winner = null;
+
+    winningCombinations.forEach((combo, index) => {
+        if (board[combo[0]] &&
+            board[combo[0]] === board[combo[1]] &&
+            board[combo[0]] === board[combo[2]]) {
+                winner = board[combo[0]];
+            }
+
+            console.log(board[combo[0]]);
+        });
+
+        console.log(winner);
+        
+        if(winner === 'X' && heading.textContent !== "PLAY AGAIN?") {
+            ++player1Score;
+            alert('PLAYER 1 WINS');
+            heading.textContent = "PLAY AGAIN?";
+            updatingTheScore();// why did i have to call it as a function for the counter to update despite the player score updating?
+        } else if(winner === 'O' && heading.textContent !== "PLAY AGAIN?") {
+            heading.textContent = "PLAY AGAIN?";
+            ++player2Score;
+            alert('PLAYER 2 WINS');
+            updatingTheScore();
+        } else if( winner === 'D' && heading.textContent !== 'PLAY AGAIN?'){ 
+            alert('DRAW');
+            heading.textContent = "PLAY AGAIN?";
         }
-        // board.every((board) => board.textContent === "X" || board.textContent === "O") && winner !== "X" || 'O' ? null && console.log('null works') : winner = 'D' && console.log();
-        // return winner ? winner : board.includes('') ? null : 'D';
-        //conditions: winner doesn't eequal x or o; all squares have a x or o in them -> draw
-        // squares[winningCombination[0]].textContent === "X"||'O'&& winner !== 'X' || winner !== 'O' ? winner && console.log('winner works') : winner = "D"&& console.log('D works');
-    });
+
+        // return null ? winner : board.includes('') ? null : 'T';
+};
+
+// const getWinner = () => {
+//     winningCombinations.forEach((winningCombination) => {
+//         if (squares[winningCombination[0]].textContent && squares[winningCombination[0]].textContent === squares[winningCombination[1]].textContent &&squares[winningCombination[0]].textContent === squares[winningCombination[2]].textContent) {
+//             winner = squares[winningCombination[0]].textContent;
+            
+//             // squares[winningCombination[0]].textContent === "X" || squares[winningCombination[0]].textContent === 'O' && winner === null? winner ="D" && console.log('d works'): winner = null && console.log('null works');
+//         }else if (amountOfXOnTheBoard.length + amountOfOOnTheBoard.length === 9 && winner !== squares[winningCombination[0]].textContent){
+//             winner = 'D';
+//         }
+//         // board.every((board) => board.textContent === "X" || board.textContent === "O") && winner !== "X" || 'O' ? null && console.log('null works') : winner = 'D' && console.log();
+//         // return winner ? winner : board.includes('') ? null : 'D';
+//         //conditions: winner doesn't eequal x or o; all squares have a x or o in them -> draw
+//         // squares[winningCombination[0]].textContent === "X"||'O'&& winner !== 'X' || winner !== 'O' ? winner && console.log('winner works') : winner = "D"&& console.log('D works');
+//     });
+    
      
         
-    // if( board.every( (board) => (board.textContent === "X" || board.textContent === "O" & winner !== 'X' || winner !== 'O'))){
-    //     console.log(board)
+//     // if( board.every( (board) => (board.textContent === "X" || board.textContent === "O" & winner !== 'X' || winner !== 'O'))){
+//     //     console.log(board)
 
-    //     console.log(winner);
-    //     winner = 'D';
-    // };
+//     //     console.log(winner);
+//     //     winner = 'D';
+//     // };
 
-    if(winner === 'X' && heading.textContent !== "PLAY AGAIN?") {
-        ++player1Score;
-        alert('PLAYER 1 WINS');
-        heading.textContent = "PLAY AGAIN?";
-        updatingTheScore();// why did i have to call it as a function for the counter to update despite the player score updating?
-    } else if(winner === 'O' && heading.textContent !== "PLAY AGAIN?") {
-        heading.textContent = "PLAY AGAIN?";
-        ++player2Score;
-        alert('PLAYER 2 WINS');
-        updatingTheScore();
-    } else if( winner === 'D' && heading.textContent !== 'PLAY AGAIN?'){ 
-        alert('DRAW');
-        heading.textContent = "PLAY AGAIN?";
-    }
-};
+
+// };
 
 heading.addEventListener('click', () => {
     if (heading.textContent === 'PLAY AGAIN?'){
@@ -96,7 +118,6 @@ for (let i = 0; i < squares.length; i++) {
             amountOfXOnTheBoard.push(squares[i]);
             heading.textContent = 'PLAYER ONE';
             activePlayer = 2;
-            console.log(amountOfXOnTheBoard.length);
 
         } else if (activePlayer === 2 && heading.textContent !== "PLAY AGAIN?"){
 
@@ -106,7 +127,6 @@ for (let i = 0; i < squares.length; i++) {
             amountOfOOnTheBoard.push(squares[i]);
             heading.textContent = 'PLAYER TWO';
             activePlayer = 1;
-            console.log(amountOfOOnTheBoard.length);
         };
         getWinner();
     });

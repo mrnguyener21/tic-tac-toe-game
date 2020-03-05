@@ -33,20 +33,6 @@
  }
 
 .theSquares{
-    /*
-    my design code
-
-    display: grid;
-    height: auto;
-    grid-template-columns: repeat(3,200px);
-    grid-template-rows: repeat(3,200px);
-    justify-content: center;
-    align-content: center;
-    border: dashed;
-
-    */
-
-    /*the design code i like better compare and learn*/
     display: grid;
 	grid-template: repeat(3, 1fr) / repeat(3, 1fr);
     width: 600px;
@@ -59,17 +45,8 @@
 }
 
 .square{
-    /*
-    my design code
-    border: solid;
-    border-width: 2px;
-    border-color: darkblue;
-    height: 200px;
-    width: auto;
-    background-color: cyan;
-    */
-    /*the design code i liked better, compare and learn*/
-    border: 6px solid #2c3e50; /*he repeated this so this border and the border in .theSquares can blend in*/
+
+    border: 6px solid #2c3e50; 
     border-radius: 2px;
     font-family: Helvetica;
     font-weight: bold;
