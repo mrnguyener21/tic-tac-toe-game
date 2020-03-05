@@ -6,6 +6,8 @@ const score = document.querySelector('.score');
 
 const winningCombinations = [ [ 0, 1, 2 ], [ 3, 4, 5 ], [ 6, 7, 8 ], [ 0, 3, 6 ], [ 1, 4, 7 ], [ 2, 5, 8 ], [ 0, 4, 8 ],[ 2, 4, 6 ] ];
 const board = [];
+const amountOfXOnTheBoard = [];
+const amountOfOOnTheBoard = [];
 
 for (let i = 0; i < squares.length; i++){
     board.push(squares[i]);
@@ -28,13 +30,15 @@ const getWinner = () => {
     winningCombinations.forEach((winningCombination) => {
         if (squares[winningCombination[0]].textContent && squares[winningCombination[0]].textContent === squares[winningCombination[1]].textContent &&squares[winningCombination[0]].textContent === squares[winningCombination[2]].textContent) {
             winner = squares[winningCombination[0]].textContent;
-   
+            
             // squares[winningCombination[0]].textContent === "X" || squares[winningCombination[0]].textContent === 'O' && winner === null? winner ="D" && console.log('d works'): winner = null && console.log('null works');
+        } else if (winner !== 'X' || winner !== 'O'&& amountOfXOnTheBoard.length + amountOfOOnTheBoard.length === 9){
+            winner = 'D';
         }
         // board.every((board) => board.textContent === "X" || board.textContent === "O") && winner !== "X" || 'O' ? null && console.log('null works') : winner = 'D' && console.log();
         // return winner ? winner : board.includes('') ? null : 'D';
         //conditions: winner doesn't eequal x or o; all squares have a x or o in them -> draw
-        squares[winningCombination[0]].textContent === "X"||'O'&& winner !== 'X' || winner !== 'O' ? winner && console.log('winner works') : winner = "D"&& console.log('D works');
+        // squares[winningCombination[0]].textContent === "X"||'O'&& winner !== 'X' || winner !== 'O' ? winner && console.log('winner works') : winner = "D"&& console.log('D works');
     });
      
         
@@ -87,18 +91,20 @@ for (let i = 0; i < squares.length; i++) {
             if(squares[i].textContent !== 'O'){
                 squares[i].textContent = 'X';   
             };
-
+            amountOfXOnTheBoard.push(squares[i]);
             heading.textContent = 'PLAYER ONE';
             activePlayer = 2;
+            console.log(amountOfXOnTheBoard.length);
 
         } else if (activePlayer === 2 && heading.textContent !== "PLAY AGAIN?"){
 
             if(squares[i].textContent !== 'X'){
                 squares[i].textContent = 'O';
             };
-
+            amountOfOOnTheBoard.push(squares[i]);
             heading.textContent = 'PLAYER TWO';
             activePlayer = 1;
+            console.log(amountOfOOnTheBoard.length);
         };
         getWinner();
     });
