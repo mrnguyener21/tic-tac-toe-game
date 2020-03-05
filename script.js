@@ -23,8 +23,8 @@ updatingTheScore();
 const reset = () => {
     for(let i = 0; i < 9; i++){
         squares[i].textContent = '';
-        amountOfOOnTheBoard = [];
-        amountOfXOnTheBoard = [];
+        amountOfOOnTheBoard.length = 0;
+        amountOfXOnTheBoard.length = 0;
     }
 }; 
 
