@@ -34,7 +34,9 @@ const getWinner = () => {
             winner = squares[winningCombination[0]].textContent;
             
             // squares[winningCombination[0]].textContent === "X" || squares[winningCombination[0]].textContent === 'O' && winner === null? winner ="D" && console.log('d works'): winner = null && console.log('null works');
-        } else if (amountOfXOnTheBoard.length + amountOfOOnTheBoard.length === 9 && winner !== 'X'||'O'){
+        } else if ( squares[winningCombination[0]].textContent && squares[winningCombination[0]].textContent === squares[winningCombination[1]].textContent &&squares[winningCombination[0]].textContent === squares[winningCombination[2]].textContent && amountOfXOnTheBoard.length + amountOfOOnTheBoard.length === 9){
+            winner = squares[winningCombination[0]].textContent;
+        }else if (amountOfXOnTheBoard.length + amountOfOOnTheBoard.length === 9){
             winner = 'D';
         }
         // board.every((board) => board.textContent === "X" || board.textContent === "O") && winner !== "X" || 'O' ? null && console.log('null works') : winner = 'D' && console.log();
