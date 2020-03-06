@@ -48,21 +48,16 @@ const getWinner = () => {
 //OBJECT WHAT HAPPENS WHEN YOU CLICK ON A SQUARE
 for (let i = 0; i < squares.length; i++) {
     squares[i].addEventListener('click', () => {
-        if (activePlayer === 1 && heading.textContent !== "PLAY AGAIN?"){
-
-            if(squares[i].textContent !== 'O' && squares[i].textContent !== 'X' ){
-                squares[i].textContent = 'X';   
-                heading.textContent = 'PLAYER ONE';
-                activePlayer = 2;
-                board.push(squares[i]);
-            };
-        } else if (activePlayer === 2 && heading.textContent !== "PLAY AGAIN?"){
-            if(squares[i].textContent !== 'X' && squares[i].textContent !== 'O'){
-                squares[i].textContent = 'O';
-                heading.textContent = 'PLAYER TWO';
-                activePlayer = 1;
-                board.push(squares[i]);
-            };
+        if (activePlayer === 1 && heading.textContent !== "PLAY AGAIN?" && squares[i].textContent !== 'O' && squares[i].textContent !== 'X'){
+            squares[i].textContent = 'X';   
+            heading.textContent = 'PLAYER ONE';
+            activePlayer = 2;
+            board.push(squares[i]);  
+        } else if (activePlayer === 2 && heading.textContent !== "PLAY AGAIN?" && squares[i].textContent !== 'X' && squares[i].textContent !== 'O'){
+            squares[i].textContent = 'O';
+            heading.textContent = 'PLAYER TWO';
+            activePlayer = 1;
+            board.push(squares[i]);
         };
         getWinner();
     });
