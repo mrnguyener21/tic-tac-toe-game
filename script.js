@@ -1,25 +1,18 @@
-// FIX BUG WHERE PLAYER 1 AND 2 IS TOGGLED IF CLICKED ON A SPACE WITH A CHARACTER ALREADY
 //DOM
-const ticTacToe = document.querySelector('.ticTactToe');
 const heading = document.querySelector('#heading');
-const theSquares = document.querySelector('.theSquares');
 const squares = document.querySelectorAll('.square');
 const score = document.querySelector('.score');
-
 //CONSTANTS
 const winningCombinations = [ [ 0, 1, 2 ], [ 3, 4, 5 ], [ 6, 7, 8 ], [ 0, 3, 6 ], [ 1, 4, 7 ], [ 2, 5, 8 ], [ 0, 4, 8 ],[ 2, 4, 6 ] ];
 const board = [];
-
 //CHANGING VARIABLES
 let activePlayer = 1;
 let player1Score = 0;
 let player2Score = 0;
 let winner = null;
-
-//SCORE BOARD 
+//SCORE BOARD OBJECT
 updatingTheScore = () => score.textContent = `${player1Score}:${player2Score}`;
 updatingTheScore();
-
 //RESET OBJECT
 const reset = () => {
     for(let i = 0; i < 9; i++){
@@ -27,20 +20,16 @@ const reset = () => {
         board.length = 0;
     }
 }; 
-
 //OBJECT TO DETERMINE THE WINNER
 const getWinner = () => {
-    //DETERMINING IF WINNER IS PLAYER 1,2 
+    //DETERMINING IF WINNER IS PLAYER 1,2 OR DRAW
     winningCombinations.forEach((winningCombination) => {
         if (squares[winningCombination[0]].textContent && squares[winningCombination[0]].textContent === squares[winningCombination[1]].textContent &&squares[winningCombination[0]].textContent === squares[winningCombination[2]].textContent) {
             winner = squares[winningCombination[0]].textContent;
-        
-        //CONDITION TO DETERMINE IF IT IS A DRAW
         }else if(board.length === 9 && winner === null){
             winner = 'D';
         }
-    });
-     
+    }); 
     if(winner === 'X' && heading.textContent !== "PLAY AGAIN?") {
         ++player1Score;
         alert('PLAYER 1 WINS');
@@ -56,8 +45,7 @@ const getWinner = () => {
         heading.textContent = "PLAY AGAIN?";
     }
 };
-
-
+//OBJECT WHAT HAPPENS WHEN YOU CLICK ON A SQUARE
 for (let i = 0; i < squares.length; i++) {
     squares[i].addEventListener('click', () => {
         if (activePlayer === 1 && heading.textContent !== "PLAY AGAIN?"){
@@ -68,29 +56,22 @@ for (let i = 0; i < squares.length; i++) {
                 activePlayer = 2;
                 board.push(squares[i]);
             };
- 
-
         } else if (activePlayer === 2 && heading.textContent !== "PLAY AGAIN?"){
-
             if(squares[i].textContent !== 'X' && squares[i].textContent !== 'O'){
                 squares[i].textContent = 'O';
                 heading.textContent = 'PLAYER TWO';
                 activePlayer = 1;
                 board.push(squares[i]);
             };
-
         };
-        console.log(board);
-        console.log(squares[i].textContent)
         getWinner();
     });
 };
-//LET YOU START A NEW GAME BY CLICKIG ON THE BUTTON AFTER A WINNER WAS DETERMINED
+//OBJECT TO START NEW GAME AND DETERMINE WHO STARTS THAT GAME
 heading.addEventListener('click', () => {
     if (heading.textContent === 'PLAY AGAIN?'){
         reset();
     };
-    //THE IF/ELSE STATEMENT ALLOWS THE LOSER TO GO FIRST ON NEW GAME OR IF IT WAS A DRAW THE PERSON WHO WAS SUPPOSE TO GO NEXT WILL GO FIRST IN THE NEW GAME
     if( winner === 'X'){
         winner = null;
         activePlayer = 2;
