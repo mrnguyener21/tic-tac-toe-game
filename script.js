@@ -1,3 +1,4 @@
+// FIX BUG WHERE PLAYER 1 AND 2 IS TOGGLED IF CLICKED ON A SPACE WITH A CHARACTER ALREADY
 const ticTacToe = document.querySelector('.ticTactToe');
 const heading = document.querySelector('#heading');
 const theSquares = document.querySelector('.theSquares');
@@ -7,9 +8,6 @@ const score = document.querySelector('.score');
 const winningCombinations = [ [ 0, 1, 2 ], [ 3, 4, 5 ], [ 6, 7, 8 ], [ 0, 3, 6 ], [ 1, 4, 7 ], [ 2, 5, 8 ], [ 0, 4, 8 ],[ 2, 4, 6 ] ];
 const board = [];
 
-// for (let i = 0; i < squares.length; i++){
-//     board.push(squares[i]);
-// } ;
 let activePlayer = 1;
 let player1Score = 0;
 let player2Score = 0;
@@ -32,13 +30,9 @@ const getWinner = () => {
   
         }else if(board.length === 9 && winner === null){
             winner = 'D';
-            console.log('D WORKS');
         }
-        
-
     });
      
-
     if(winner === 'X' && heading.textContent !== "PLAY AGAIN?") {
         ++player1Score;
         alert('PLAYER 1 WINS');
@@ -64,7 +58,6 @@ heading.addEventListener('click', () => {
         activePlayer = 2;
         heading.textContent = 'MAKE A MOVE';
     } else if (winner === 'O'){
-
         winner = null;
         activePlayer = 1;
         heading.textContent = 'MAKE A MOVE';
@@ -81,23 +74,17 @@ for (let i = 0; i < squares.length; i++) {
             if(squares[i].textContent !== 'O'){
                 squares[i].textContent = 'X';   
             };
-
             heading.textContent = 'PLAYER ONE';
             activePlayer = 2;
             board.push(squares[i]);
-            console.log(board);
-            console.log(board.length);
         } else if (activePlayer === 2 && heading.textContent !== "PLAY AGAIN?"){
 
             if(squares[i].textContent !== 'X'){
                 squares[i].textContent = 'O';
             };
-            
             heading.textContent = 'PLAYER TWO';
             activePlayer = 1;
             board.push(squares[i]);
-            console.log(board);
-            console.log(board.length);
         };
         getWinner();
     });
