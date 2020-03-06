@@ -9,7 +9,7 @@ const board = [];
 let activePlayer = 1;
 let player1Score = 0;
 let player2Score = 0;
-let winner = null;
+let winner = null
 //SCORE BOARD OBJECT
 updatingTheScore = () => score.textContent = `${player1Score}:${player2Score}`;
 updatingTheScore();
