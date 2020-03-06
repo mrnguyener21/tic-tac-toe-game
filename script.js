@@ -64,19 +64,21 @@ for (let i = 0; i < squares.length; i++) {
 
             if(squares[i].textContent !== 'O' && squares[i].textContent !== 'X' ){
                 squares[i].textContent = 'X';   
+                heading.textContent = 'PLAYER ONE';
+                activePlayer = 2;
+                board.push(squares[i]);
             };
-            heading.textContent = 'PLAYER ONE';
-            activePlayer = 2;
-            board.push(squares[i]);
+ 
 
         } else if (activePlayer === 2 && heading.textContent !== "PLAY AGAIN?"){
 
             if(squares[i].textContent !== 'X' && squares[i].textContent !== 'O'){
                 squares[i].textContent = 'O';
+                heading.textContent = 'PLAYER TWO';
+                activePlayer = 1;
+                board.push(squares[i]);
             };
-            heading.textContent = 'PLAYER TWO';
-            activePlayer = 1;
-            board.push(squares[i]);
+
         };
         console.log(board);
         console.log(squares[i].textContent)
