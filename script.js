@@ -1,4 +1,5 @@
-//DOM
+
+//DOM FOR TIC TAC TOE TABLE
 const heading = document.querySelector('#heading');
 const squares = document.querySelectorAll('.square');
 const score = document.querySelector('.score');
@@ -81,3 +82,16 @@ heading.addEventListener('click', () => {
     }
 });
 
+
+// POP UP MODAL Object
+// 1)when a winner is declared change class from winnerModal---hide--- to winnerModal
+// 2)move the play again button features to the pop up MODAL
+// 3)have winner be declared in the pop up
+// 4)basically everythign in the current 'heading' be moved to the pop up modal
+
+//DOM FOR POP UP MODAL
+const winnerModal = document.querySelector('.winnerModal');
+const popUpWindow = document.querySelector('.popUpWindow');
+const trophy = document.querySelector('#trophy');
+const winner = document.querySelector('#winner');
+const playAgain = document.querySelector('#playAgain');
