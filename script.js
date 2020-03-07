@@ -1,4 +1,3 @@
-
 //DOM FOR TIC TAC TOE TABLE
 const heading = document.querySelector('#heading');
 const squares = document.querySelectorAll('.square');
