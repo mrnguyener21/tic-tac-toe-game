@@ -68,7 +68,7 @@
 }
 #popUpWindow {
     background-color: white;
-    padding-top: 1%;
+    padding-top: 5%;
     width: 90%;
     height: 80%;
     display: flex;
@@ -81,8 +81,15 @@
 }
 #winner{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
+    /* border: solid; */
+    font-size: 700%;
+    width: 50%;
+    height: 30%;
 }
 #playAgain{
-
+    width: 30%;
+    height: 15%;
+    font-size: xx-large;
 }
