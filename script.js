@@ -90,7 +90,11 @@ heading.addEventListener('click', () => {
 
 //DOM FOR POP UP MODAL
 const winnerModal = document.querySelector('.winnerModal');
+
 const popUpWindow = document.querySelector('.popUpWindow');
+
 const trophy = document.querySelector('#trophy');
+
 const winner = document.querySelector('#winner');
+
 const playAgain = document.querySelector('#playAgain');
