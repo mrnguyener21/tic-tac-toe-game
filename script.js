@@ -43,16 +43,16 @@ const getWinner = () => {
     }); 
     if(winner === 'X' && heading.textContent !== "PLAY AGAIN?") {
         ++player1Score;
-        alert('PLAYER 1 WINS');
+        winnerDisplay.textContent = 'PLAYER 1 WINS';
         heading.textContent = "PLAY AGAIN?";
         updatingTheScore();// why did i have to call it as a function for the counter to update despite the player score updating?
     } else if(winner === 'O' && heading.textContent !== "PLAY AGAIN?") {
         heading.textContent = "PLAY AGAIN?";
         ++player2Score;
-        alert('PLAYER 2 WINS');
+        winnerDisplay.textContent ='PLAYER 2 WINS';
         updatingTheScore();
     } else if( winner === 'D' && heading.textContent !== 'PLAY AGAIN?'){ 
-        alert('DRAW');
+        winnerDisplay.textContent ='DRAW';
         heading.textContent = "PLAY AGAIN?";
     }
     console.log(winner)
@@ -99,8 +99,6 @@ heading.addEventListener('click', () => {
 
 
 // POP UP MODAL Object
-// 1)when a winner is declared change class from winnerModal---hide--- to winnerModal
-
 // 2)move the play again button features to the pop up MODAL
 // 3)have winner be declared in the pop up
 // 4)basically everythign in the current 'heading' be moved to the pop up modal
