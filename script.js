@@ -98,3 +98,4 @@ const trophy = document.querySelector('#trophy');
 const winner = document.querySelector('#winner');
 
 const playAgain = document.querySelector('#playAgain');
+
