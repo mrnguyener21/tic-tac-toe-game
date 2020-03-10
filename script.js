@@ -11,6 +11,7 @@ const trophy = document.querySelector('#trophy');
 const winnerDisplay = document.querySelector('#winner');
 const playAgain = document.querySelector('#playAgain');
 
+
 // CODE FOR THE TIC TAC TOE BOARD
 
 //CONSTANTS
@@ -21,6 +22,7 @@ let activePlayer = 1;
 let player1Score = 0;
 let player2Score = 0;
 let winner = null
+let togglePopUp = () => winner === null? null && console.log(winner): winnerModalHidden.classList.add(winnerModal) && console.log(winner);
 //SCORE BOARD OBJECT
 updatingTheScore = () => score.textContent = `${player1Score}:${player2Score}`;
 updatingTheScore();
@@ -71,6 +73,7 @@ for (let i = 0; i < squares.length; i++) {
             board.push(squares[i]);
         };
         getWinner();
+        togglePopUp();
     });
 };
 //OBJECT TO START NEW GAME AND DETERMINE WHO STARTS THAT GAME
@@ -94,7 +97,7 @@ heading.addEventListener('click', () => {
 
 // POP UP MODAL Object
 // 1)when a winner is declared change class from winnerModal---hide--- to winnerModal
-winner === null? null: winnerModalHidden.classList.add(winnerModal);
+
 // 2)move the play again button features to the pop up MODAL
 // 3)have winner be declared in the pop up
 // 4)basically everythign in the current 'heading' be moved to the pop up modal
