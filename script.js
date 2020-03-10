@@ -79,21 +79,22 @@ for (let i = 0; i < squares.length; i++) {
     });
 };
 //OBJECT TO START NEW GAME AND DETERMINE WHO STARTS THAT GAME
-heading.addEventListener('click', () => {
-    if (heading.textContent === 'PLAY AGAIN?'){
+playAgain.addEventListener('click', () => {
+    if (playAgain.textContent === 'PLAY AGAIN?'){
         reset();
+        winnerModal.classList.remove('---Show');
     };
     if( winner === 'X'){
         winner = null;
         activePlayer = 2;
-        heading.textContent = 'MAKE A MOVE';
+        playerAgain.textContent = 'MAKE A MOVE';
     } else if (winner === 'O'){
         winner = null;
         activePlayer = 1;
         heading.textContent = 'MAKE A MOVE';
     } else if (winner === 'D'){
         winner = null;
-        heading.textContent = 'MAKE A MOVE';
+        playAgain.textContent = 'MAKE A MOVE';
     }
 });
 
