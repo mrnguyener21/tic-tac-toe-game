@@ -5,6 +5,7 @@ const score = document.querySelector('.score');
 
 //DOM FOR POP UP MODAL
 const winnerModal = document.querySelector('.winnerModal');
+const winnerModalHidden = document.querySelector('.winnerModal---Hidden');
 const popUpWindow = document.querySelector('.popUpWindow');
 const trophy = document.querySelector('#trophy');
 const winnerDisplay = document.querySelector('#winner');
