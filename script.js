@@ -56,10 +56,7 @@ const getWinner = () => {
         heading.textContent = "PLAY AGAIN?";
     }
     console.log(winner)
-    if(winner !== null){
-        winnerModal.classList.add(winnerModal---Show);
-        console.log(winner)
-    }
+
 };
 //OBJECT WHAT HAPPENS WHEN YOU CLICK ON A SQUARE
 for (let i = 0; i < squares.length; i++) {
@@ -108,3 +105,7 @@ heading.addEventListener('click', () => {
 // 4)basically everythign in the current 'heading' be moved to the pop up modal
 
 
+if(heading.textContent === 'PLAY AGAIN'){
+    winnerModal.classList.add(winnerModal---Show);
+    console.log(winner)
+}
