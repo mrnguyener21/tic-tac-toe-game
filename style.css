@@ -66,6 +66,9 @@
     align-items: center;
     background-color: rgba(0, 0,0,.5);
 }
+.winnerModal---Hidden{
+    display: none;
+}
 #popUpWindow {
     background-color: white;
     padding-top: 5%;
