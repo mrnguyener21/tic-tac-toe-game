@@ -87,7 +87,7 @@ playAgain.addEventListener('click', () => {
     if( winner === 'X'){
         winner = null;
         activePlayer = 2;
-        playerAgain.textContent = 'MAKE A MOVE';
+        playAgain.textContent = 'MAKE A MOVE';
     } else if (winner === 'O'){
         winner = null;
         activePlayer = 1;
