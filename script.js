@@ -94,7 +94,7 @@ heading.addEventListener('click', () => {
 
 // POP UP MODAL Object
 // 1)when a winner is declared change class from winnerModal---hide--- to winnerModal
-winner === null? null: winnerModal.classList.add(winnerModal);
+winner === null? null: winnerModalHidden.classList.add(winnerModal);
 // 2)move the play again button features to the pop up MODAL
 // 3)have winner be declared in the pop up
 // 4)basically everythign in the current 'heading' be moved to the pop up modal
