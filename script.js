@@ -5,7 +5,6 @@ const score = document.querySelector('.score');
 
 //DOM FOR POP UP MODAL
 const winnerModal = document.querySelector('.winnerModal');
-const winnerModalHidden = document.querySelector('.winnerModal---Hidden');
 const popUpWindow = document.querySelector('.popUpWindow');
 const trophy = document.querySelector('#trophy');
 const winnerDisplay = document.querySelector('#winner');
@@ -22,7 +21,6 @@ let activePlayer = 1;
 let player1Score = 0;
 let player2Score = 0;
 let winner = null
-let togglePopUp = () => winner === null? null && console.log(winner): winnerModalHidden.classList.add(winnerModal) && console.log(winner);
 //SCORE BOARD OBJECT
 updatingTheScore = () => score.textContent = `${player1Score}:${player2Score}`;
 updatingTheScore();
@@ -57,6 +55,11 @@ const getWinner = () => {
         alert('DRAW');
         heading.textContent = "PLAY AGAIN?";
     }
+    console.log(winner)
+    if(winner !== null){
+        winnerModal.classList.add(winnerModal---Show);
+        console.log(winner)
+    }
 };
 //OBJECT WHAT HAPPENS WHEN YOU CLICK ON A SQUARE
 for (let i = 0; i < squares.length; i++) {
@@ -66,14 +69,15 @@ for (let i = 0; i < squares.length; i++) {
             heading.textContent = 'PLAYER ONE';
             activePlayer = 2;
             board.push(squares[i]);  
+            console.log(winner);
         } else if (activePlayer === 2 && heading.textContent !== "PLAY AGAIN?" && squares[i].textContent !== 'X' && squares[i].textContent !== 'O'){
             squares[i].textContent = 'O';
             heading.textContent = 'PLAYER TWO';
             activePlayer = 1;
             board.push(squares[i]);
+            console.log(winner);
         };
         getWinner();
-        togglePopUp();
     });
 };
 //OBJECT TO START NEW GAME AND DETERMINE WHO STARTS THAT GAME
@@ -94,6 +98,7 @@ heading.addEventListener('click', () => {
         heading.textContent = 'MAKE A MOVE';
     }
 });
+
 
 // POP UP MODAL Object
 // 1)when a winner is declared change class from winnerModal---hide--- to winnerModal
