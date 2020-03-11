@@ -30,6 +30,7 @@ let winner = null
 //SCORE BOARD OBJECT
 updatingTheScore = () => score.textContent = `${player1Score}:${player2Score}`;
 updatingTheScore();
+
 //RESET OBJECT
 const reset = () => {
     for(let i = 0; i < 9; i++){
@@ -66,12 +67,12 @@ const getWinner = () => {
 //OBJECT WHAT HAPPENS WHEN YOU CLICK ON A SQUARE
 for (let i = 0; i < squares.length; i++) {
     squares[i].addEventListener('click', () => {
-        if (activePlayer === 1 && squares[i].textContent !== 'O' && squares[i].textContent !== 'X'){
+        if (activePlayer === 1 && squares[i].textContent === ''){
             squares[i].textContent = 'X';   
             heading.textContent = 'PLAYER ONE';
             activePlayer = 2;
             board.push(squares[i]);  
-        } else if (activePlayer === 2 && squares[i].textContent !== 'X' && squares[i].textContent !== 'O'){
+        } else if (activePlayer === 2 && squares[i].textContent === ''){
             squares[i].textContent = 'O';
             heading.textContent = 'PLAYER TWO';
             activePlayer = 1;
