@@ -82,7 +82,8 @@ for (let i = 0; i < squares.length; i++) {
 //OBJECT TO START NEW GAME AND DETERMINE WHO STARTS THAT GAME
 playAgain.addEventListener('click', () => {
 
-    winnerModal.classList.add('winnerModal');
+    winnerModal.classList.remove('winnerModal---Show');
+    console.log(winnerModal.classlist);
     reset();
     console.log('button works')
     if( winner === 'X'){
