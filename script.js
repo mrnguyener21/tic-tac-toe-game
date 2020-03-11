@@ -31,6 +31,7 @@ const reset = () => {
         board.length = 0;
     }
 }; 
+
 //OBJECT TO DETERMINE THE WINNER
 const getWinner = () => {
     //DETERMINING IF WINNER IS PLAYER 1,2 OR DRAW
@@ -58,6 +59,7 @@ const getWinner = () => {
     console.log(winner)
 
 };
+
 //OBJECT WHAT HAPPENS WHEN YOU CLICK ON A SQUARE
 for (let i = 0; i < squares.length; i++) {
     squares[i].addEventListener('click', () => {
@@ -78,12 +80,13 @@ for (let i = 0; i < squares.length; i++) {
         winner === null? null:winnerModal.classList.add('winnerModal---Show')
     });
 };
+
 //OBJECT TO START NEW GAME AND DETERMINE WHO STARTS THAT GAME
 playAgain.addEventListener('click', () => {
-    if (playAgain.textContent === 'PLAY AGAIN?'){
-        reset();
-        winnerModal.classList.remove('---Show');
-    };
+
+    winnerModal.classList.remove('---Show');
+    reset();
+    console.log('button works')
     if( winner === 'X'){
         winner = null;
         activePlayer = 2;
@@ -97,6 +100,7 @@ playAgain.addEventListener('click', () => {
         heading.textContent = 'START';
     }
 });
+
 
 
 // POP UP MODAL Object
