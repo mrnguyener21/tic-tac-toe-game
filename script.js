@@ -87,14 +87,14 @@ playAgain.addEventListener('click', () => {
     if( winner === 'X'){
         winner = null;
         activePlayer = 2;
-        playAgain.textContent = 'MAKE A MOVE';
+        heading.textContent = 'START';
     } else if (winner === 'O'){
         winner = null;
         activePlayer = 1;
-        heading.textContent = 'MAKE A MOVE';
+        heading.textContent = 'START';
     } else if (winner === 'D'){
         winner = null;
-        playAgain.textContent = 'MAKE A MOVE';
+        heading.textContent = 'START';
     }
 });
 
