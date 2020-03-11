@@ -68,13 +68,11 @@ for (let i = 0; i < squares.length; i++) {
             heading.textContent = 'PLAYER ONE';
             activePlayer = 2;
             board.push(squares[i]);  
-            console.log(winner);
         } else if (activePlayer === 2 && heading.textContent !== "PLAY AGAIN?" && squares[i].textContent !== 'X' && squares[i].textContent !== 'O'){
             squares[i].textContent = 'O';
             heading.textContent = 'PLAYER TWO';
             activePlayer = 1;
             board.push(squares[i]);
-            console.log(winner);
         };
         getWinner();
         winner === null? null:winnerModal.classList.add('winnerModal---Show')
@@ -84,7 +82,7 @@ for (let i = 0; i < squares.length; i++) {
 //OBJECT TO START NEW GAME AND DETERMINE WHO STARTS THAT GAME
 playAgain.addEventListener('click', () => {
 
-    winnerModal.classList.remove('---Show');
+    winnerModal.classList.add('winnerModal');
     reset();
     console.log('button works')
     if( winner === 'X'){
