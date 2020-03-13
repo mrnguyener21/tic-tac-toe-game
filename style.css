@@ -1,6 +1,6 @@
-/* body{
+body{
     background-color: #34495e;
-} */
+}
 
 .startModal{
     position: absolute;
@@ -67,8 +67,8 @@
 	margin: 0 auto;
   background-color: #34495e;
   color: #fff;
-  border: 6px solid #2c3e50;
-  border-radius: 10px;
+  /* border: 6px solid #2c3e50; */
+  /* border-radius: 10px; */
 }
 
 .square{
