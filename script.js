@@ -1,4 +1,8 @@
-//DOM FOR TIC TAC TOE TABLE
+// DOM FOR START MODAL
+const startModal = document.querySelector('.startModal');
+const startButton = document.querySelector('#start');
+
+//DOM FOR TIC TAC TOE TABLE//
 const heading = document.querySelector('#heading');
 const squares = document.querySelectorAll('.square');
 const score = document.querySelector('.score');
@@ -6,7 +10,7 @@ const score = document.querySelector('.score');
 //DOM FOR POP UP MODAL
 const winnerModal = document.querySelector('.winnerModal');
 const winnerDisplay = document.querySelector('#winner');
-const playAgain = document.querySelector('#playAgain');
+const newGame = document.querySelector('#newGame');
 
 //CONSTANTS
 const winningCombinations = [ 
@@ -26,6 +30,10 @@ let activePlayer = 1;
 let player1Score = 0;
 let player2Score = 0;
 let winner = null
+
+
+startButton.addEventListener('click', () => startModal.classList.add('startModal---Hide'));
+
 
 //SCORE BOARD OBJECT
 updatingTheScore = () => score.textContent = `${player1Score}:${player2Score}`;
@@ -84,7 +92,7 @@ for (let i = 0; i < squares.length; i++) {
 };
 
 //OBJECT TO START NEW GAME AND DETERMINE WHO STARTS THAT GAME
-playAgain.addEventListener('click', () => {
+newGame.addEventListener('click', () => {
 
     winnerModal.classList.remove('winnerModal---Show');
     reset();
