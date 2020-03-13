@@ -1,9 +1,35 @@
-.ticTacToe{
+/* .startModal{
+    display: none;
+} */
+.startModal{
+    position: absolute;
+    top:0;
+    height:100%;
+    width: 100%;
     display: flex;
     justify-content: center;
-    align-content: center;
-
+    align-items: center;
+    background-color: rgba(0, 0,0,.5);
 }
+#startWindow {
+    background-color: white;
+    padding-top: 5%;
+    width: 90%;
+    height: 80%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+#start{
+    width: 30%;
+    height: 15%;
+    font-size: xx-large;
+}
+
+
+
 
 .buttonContainer {
    display: flex;
@@ -19,7 +45,8 @@
 }
 
 #heading{
-    border: solid;
+    margin-top: 5%;
+    font-size: 200%;
 }
  .score {
      display: flex;
