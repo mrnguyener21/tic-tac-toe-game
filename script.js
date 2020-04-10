@@ -1,6 +1,6 @@
 // DOM FOR START MODAL
 const startModal = document.querySelector('.startModal');
-const startButton = document.querySelector('#start');
+const startButton = document.querySelector('#startButton');
 
 //DOM FOR TIC TAC TOE TABLE//
 const heading = document.querySelector('#heading');
@@ -10,7 +10,7 @@ const score = document.querySelector('.score');
 //DOM FOR POP UP MODAL
 const winnerModal = document.querySelector('.winnerModal');
 const winnerDisplay = document.querySelector('#winner');
-const newGame = document.querySelector('#newGame');
+const newGame = document.querySelector('#newGameButton');
 
 //CONSTANTS
 const winningCombinations = [ 
@@ -77,12 +77,12 @@ for (let i = 0; i < squares.length; i++) {
     squares[i].addEventListener('click', () => {
         if (activePlayer === 1 && squares[i].textContent === ''){
             squares[i].textContent = 'X';   
-            heading.textContent = 'PLAYER ONE';
+            heading.textContent = 'PLAYER 2\'S TURN';
             activePlayer = 2;
             board.push(squares[i]);  
         } else if (activePlayer === 2 && squares[i].textContent === ''){
             squares[i].textContent = 'O';
-            heading.textContent = 'PLAYER TWO';
+            heading.textContent = 'PLAYER 1\'S TURN';
             activePlayer = 1;
             board.push(squares[i]);
         };
@@ -96,18 +96,22 @@ newGame.addEventListener('click', () => {
 
     winnerModal.classList.remove('winnerModal---Show');
     reset();
-    console.log('button works')
+    console.log('button works') 
     if( winner === 'X'){
         winner = null;
         activePlayer = 2;
-        heading.textContent = 'START';
+        heading.textContent = 'PLAYER 2\'S TURN';
     } else if (winner === 'O'){
         winner = null;
         activePlayer = 1;
-        heading.textContent = 'START';
+        heading.textContent = 'PLAYER 1\'S TURN';
     } else if (winner === 'D'){
         winner = null;
-        heading.textContent = 'START';
+        if(activePlayer === 1){
+            heading.textContent = 'PLAYER 1\'S TURN'
+        }else if(activePlayer === 2){
+            heading.textContent === 'PLAYER 2\'S TURN'
+        }
     }
 });
 

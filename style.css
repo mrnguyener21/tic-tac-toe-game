@@ -1,5 +1,9 @@
+/* NEW COLOR SCHEME = DARK GREY BACKGROUND WITH VIBRANT AQUA GREEN FOR THE BOARD AND X/O */
+
 body{
-    background-color: #34495e;
+    background-color: #212121;
+    color: #EEEEEE;
+    font-family: 'Bangers', cursive;
 }
 
 .startModal{
@@ -8,29 +12,42 @@ body{
     height:100%;
     width: 100%;
     display: flex;
-    justify-content: center;
+    /* justify-content: space-around; */
     align-items: center;
-    background-color: rgba(0, 0,0,.5);
+    flex-direction: column;
+    background-color:#212121;
 }
 .startModal---Hide{
     display: none;
 }
-#startWindow {
-    background-color: white;
-    padding-bottom: 5%;
-    width: 90%;
-    height: 80%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+#title{
+    color:#EEEEEE;
+    /* border:solid; */
+    margin-top: 5%;
+    margin-bottom:0;
+    font-size: 20vh;
+    color:#616161
 }
 
-#start{
-    width: 30%;
-    height: 15%;
-    font-size: xx-large;
+#logo{
+    margin-bottom: 1%;
+}
+#startButton{
+     width: 20%;
+    height: 5%;
+    border-radius: 25px;
+    border: 0px;
+    font-size: xx-large; 
+    background-color:#EEEEEE;
+    font-family: 'Bangers', cursive;
+    color:black;
 }
 
+#startButton:hover{
+    background-color:#81C784;
+
+}
 .buttonContainer {
    display: flex;
    align-items: center;
@@ -45,8 +62,14 @@ body{
 }
 
 #heading{
+    display: flex;
+    justify-content: center;
     margin-top: 5%;
-    font-size: 200%;
+    font-size: 800%;
+    /* border:solid; */
+    /* width: 50%px;
+    height: 90px; */
+    
 }
  .score {
      display: flex;
@@ -65,15 +88,15 @@ body{
     width: 600px;
 	height: 600px;
 	margin: 0 auto;
-  background-color: #34495e;
-  color: #fff;
+  background-color: #212121;
+  color: #EEEEEE;
   /* border: 6px solid #2c3e50; */
   /* border-radius: 10px; */
 }
 
 .square{
 
-    border: 6px solid #2c3e50; 
+    border: 6px solid #81C784; 
     border-radius: 2px;
     font-family: Helvetica;
     font-weight: bold;
@@ -81,6 +104,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'Bangers', cursive;
 }
 
 .winnerModal{
@@ -97,7 +121,8 @@ body{
     background-color: rgba(0, 0,0,.5);
 }
 #popUpWindow {
-    background-color: white;
+    background-color: #212121;
+    border-radius: 25px;
     padding-top: 5%;
     width: 90%;
     height: 80%;
@@ -117,9 +142,17 @@ body{
     font-size: 700%;
     width: 50%;
     height: 30%;
+    
 }
-#newGame{
+#newGameButton{
+    font-family: 'Bangers', cursive;
+    border-radius: 25px;
+    border: 0;
     width: 30%;
     height: 15%;
     font-size: xx-large;
+}
+#newGameButton:hover{
+    background-color:#81C784;
+
 }
