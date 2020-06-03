@@ -182,6 +182,18 @@ body{
         /* width: 120%; */
         /* margin-left: 40%; */
     }
+
+    .popUpSection{
+        /* border: solid red;
+        width: 100%;
+        height: 100%; */
+    }
+
+    .winnerModal{
+        /* border: solid yellow; */
+        width: 160%;
+        height: 160%;
+    }
 }
 
 @media only screen and (min-width: 400px) and (max-width: 750px) {/*plus size phone*/
@@ -195,6 +207,10 @@ body{
         font-size: 15vh;
         margin-top: 20%;
     }
+    #winner{
+        /* border: solid; */
+        width: 100%;
+    }
 }
 
 
@@ -203,5 +219,9 @@ body{
         text-align: center;
         font-size: 15vh;
         margin-top: 20%;
+    }
+    #winner{
+        /* border: solid; */
+        width: 100%;
     }
 }
