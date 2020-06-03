@@ -170,10 +170,24 @@ body{
     #startButton{
         text-align: center;
     }
+
+    .headingCountainer{
+        /* border: solid; */
+        width: 140%;
+        margin-left: 15%;
+    }
+    #heading{
+        /* border: solid white; */
+        font-size: 500%;
+        /* width: 120%; */
+        /* margin-left: 40%; */
+    }
 }
 
 @media only screen and (min-width: 400px) and (max-width: 750px) {/*plus size phone*/
-
+    .headingCountainer{
+        margin-left: 10%;
+    }
 }
 @media only screen and (min-width: 750px) and (max-width: 799px) {/*ipad*/
     #title{
