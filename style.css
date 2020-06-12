@@ -162,7 +162,7 @@ body{
 /* $phone: 480px;
 $tablet: 768px;
 $laptop: 1024px;
-$desktop: 14400px; */
+$desktop: 1440px; */
 
 @media screen and (max-width: 480px){
     .startModal{
@@ -183,11 +183,11 @@ $desktop: 14400px; */
         border: solid; */
     }
     #heading{
-        font-size: 7vh;
+        font-size: 3em;
         border: solid;
     }
     .score{
-        font-size: 7vh;
+        font-size: 3em;
         border: solid;
     }
 
@@ -211,22 +211,18 @@ $desktop: 14400px; */
 
 @media screen and (min-width: 480px) and (max-width: 768px){
     #title{
-        font-size: 10vh;
+        font-size: 10%;
     }
     #logo{
         width: 60vw;
     }
 
-    .headingContainer{
-        /* margin-bottom: 5%;
-        border: solid; */
-    }
     #heading{
-        font-size: 10vh;
+        font-size: 5em;
         /* border: solid; */
     }
     .score{
-        font-size: 7vh;
+        font-size: 5em;
         /* border: solid; */
     }
     .theSquares{
@@ -244,5 +240,9 @@ $desktop: 14400px; */
         width: 30vw;
 
     }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1299px){
+
 }
 
