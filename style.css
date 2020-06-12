@@ -164,6 +164,10 @@ $laptop: 1024px;
 $desktop: 14400px; */
 
 @media screen and (max-width: 480px){
+    .startModal{
+        height: 100%;
+        width: 100%;
+    }
     #title{
         font-size: 10vh;
     }
@@ -192,9 +196,10 @@ $desktop: 14400px; */
     #winner{
         /* border: solid; */
         width: 80%;
-        font-size: 8vh;
+        font-size: 5vh;
     }
     #newGameButton{
         width: 50vw;
+
     }
 }
