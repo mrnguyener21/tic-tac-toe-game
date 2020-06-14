@@ -1,6 +1,6 @@
 THE CLASSIC GAME OF TIC - TAC - TOE
 
-(./tictactoesnip.jpg)
+![TIC-TAC-TOE]("https://i.ibb.co/ZVrFJM1/tic-Tac-Toe.jpg")
 
 ### [Live Site](https://classictictactoegame.netlify.app/)
 
